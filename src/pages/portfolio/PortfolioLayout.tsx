@@ -94,13 +94,13 @@ const PortfolioLayout = () => {
           
           {/* Design System - opens in new tab */}
           <a
-            href="/design-system"
+            href="https://asto-design-system.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="nav-link flex items-center gap-2"
           >
             <BookOpen className="w-4 h-4" />
-            Dhika Design System
+            Asto Design System
             <ExternalLink className="w-3 h-3 ml-auto" />
           </a>
           
@@ -210,14 +210,14 @@ const PortfolioLayout = () => {
               
               {/* Design System - opens in new tab */}
               <a
-                href="/design-system"
+                href="https://asto-design-system.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="nav-link flex items-center gap-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <BookOpen className="w-4 h-4" />
-                Dhika Design System
+                Asto Design System
                 <ExternalLink className="w-3 h-3 ml-auto" />
               </a>
               
