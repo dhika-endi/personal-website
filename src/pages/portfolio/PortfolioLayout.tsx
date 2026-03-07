@@ -76,7 +76,7 @@ const PortfolioLayout = () => {
         className="sticky top-0 z-50 bg-[#f5f1ea] border-b border-[#e5e0d7]"
         style={{ animation: "slideInLeft .5s ease both" }}
       >
-        <div className="max-w-[1440px] mx-auto flex items-center h-14 px-8 gap-6">
+        <div className="max-w-[1440px] mx-auto flex items-center h-14 px-8 gap-6 max-[640px]:px-4 max-[640px]:gap-3">
 
           {/* Logo: avatar + name */}
           <Link
@@ -142,7 +142,7 @@ const PortfolioLayout = () => {
           <div className="flex-1" />
 
           {/* Social icons + status */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 max-[640px]:gap-2">
             {socialLinks.map((social) => (
               <a
                 key={social.name}
