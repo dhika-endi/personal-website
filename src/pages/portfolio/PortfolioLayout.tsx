@@ -73,7 +73,7 @@ const PortfolioLayout = () => {
 
       {/* ── NAVBAR ── */}
       <header
-        className="sticky top-0 z-50 bg-[#f5f1ea] border-b border-[#e5e0d7]"
+        className="fixed top-0 left-0 right-0 z-50 bg-[#f5f1ea] border-b border-[#e5e0d7]"
         style={{ animation: "slideInLeft .5s ease both" }}
       >
         <div className="max-w-[1440px] mx-auto flex items-center h-14 px-8 gap-6 max-[640px]:px-4 max-[640px]:gap-3">
@@ -254,7 +254,7 @@ const PortfolioLayout = () => {
       </div>
 
       {/* ── CONTENT ── */}
-      <main style={{ animation: "fadeUp .5s .1s ease both" }}>
+      <main className="pt-14" style={{ animation: "fadeUp .5s .1s ease both" }}>
         <Outlet />
       </main>
 
