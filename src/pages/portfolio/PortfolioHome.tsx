@@ -285,7 +285,7 @@ const PortfolioHome = () => {
               </span>
 
               {/* Quote text */}
-              <blockquote className="font-grotesk font-normal text-[1.3rem] leading-[1.75] text-[#1c1916] max-w-[720px] mb-8">
+              <blockquote className="font-grotesk font-normal text-[0.95rem] leading-[1.75] text-[#1c1916] max-w-[720px] mb-8">
                 {testimonial.quote}
               </blockquote>
 

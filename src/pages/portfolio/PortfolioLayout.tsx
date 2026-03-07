@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Menu, X } from "lucide-react";
 import dhikaAvatar from "@/assets/dhika-avatar.png";
 
 const navItems = [
@@ -56,9 +56,17 @@ const socialLinks = [
 
 const PortfolioLayout = () => {
   const location = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    setMobileMenuOpen(false);
   }, [location.pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileMenuOpen]);
 
   return (
     <div className="min-h-screen bg-[#f5f1ea]">
@@ -147,17 +155,103 @@ const PortfolioLayout = () => {
                 {social.icon}
               </a>
             ))}
-            <div className="w-px h-4 bg-[#e5e0d7] mx-1" />
-            <div
-              className="w-1.5 h-1.5 rounded-full bg-[#5a9e6f] flex-shrink-0"
+            <div className="w-px h-4 bg-[#e5e0d7] mx-1 max-[640px]:hidden" />
+            <div className="w-1.5 h-1.5 rounded-full bg-[#5a9e6f] flex-shrink-0 max-[640px]:hidden"
               style={{ animation: "statusPulse 2.5s ease-in-out infinite" }}
             />
-            <span className="font-mono text-[0.56rem] text-[#b0aba3] max-[480px]:hidden">
+            <span className="font-mono text-[0.56rem] text-[#b0aba3] max-[640px]:hidden">
               ui.dhika@gmail.com
             </span>
           </div>
+
+          {/* Burger button — mobile only */}
+          <button
+            onClick={() => setMobileMenuOpen(true)}
+            className="hidden max-[640px]:flex items-center justify-center p-1.5 ml-1 text-[#b0aba3] hover:text-[#6e6a62] transition-colors"
+            aria-label="Open menu"
+          >
+            <Menu className="w-4 h-4" />
+          </button>
         </div>
       </header>
+
+      {/* ── MOBILE DRAWER ── */}
+      <div
+        className={`fixed inset-0 z-[999] transition-opacity duration-300 ${
+          mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {/* Backdrop */}
+        <div
+          className="absolute inset-0 bg-black/30"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+
+        {/* Panel */}
+        <div
+          className={`absolute left-0 top-0 h-full w-[260px] bg-[#f5f1ea] border-r border-[#e5e0d7] flex flex-col transition-transform duration-300 ease-out ${
+            mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
+          {/* Header */}
+          <div className="flex items-center justify-between h-14 px-5 border-b border-[#e5e0d7] shrink-0">
+            <span className="font-grotesk text-[0.85rem] text-[#1c1916]">Menu</span>
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="p-1.5 text-[#b0aba3] hover:text-[#6e6a62] transition-colors"
+              aria-label="Close menu"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Nav links */}
+          <nav className="flex flex-col p-3 gap-1">
+            {navItems.map((item) => {
+              const isActive =
+                location.pathname === item.href ||
+                (item.href !== "/" && location.pathname.startsWith(item.href));
+              return (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  className={`font-mono text-[0.78rem] tracking-[0.03em] px-4 py-3 rounded transition-colors no-underline ${
+                    isActive
+                      ? "text-[#1c1916] bg-[#ece8e0]"
+                      : "text-[#6e6a62] hover:text-[#1c1916] hover:bg-[#ece8e0]"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+
+            <div className="h-px bg-[#e5e0d7] my-1" />
+
+            {externalNavItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 font-mono text-[0.78rem] tracking-[0.03em] px-4 py-3 rounded text-[#6e6a62] hover:text-[#1c1916] hover:bg-[#ece8e0] transition-colors no-underline"
+              >
+                {item.label}
+                <ExternalLink className="w-2.5 h-2.5" />
+              </a>
+            ))}
+
+            <div className="h-px bg-[#e5e0d7] my-1" />
+
+            <div className="flex items-center gap-2 px-4 py-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#5a9e6f] flex-shrink-0"
+                style={{ animation: "statusPulse 2.5s ease-in-out infinite" }}
+              />
+              <span className="font-mono text-[0.62rem] text-[#b0aba3]">ui.dhika@gmail.com</span>
+            </div>
+          </nav>
+        </div>
+      </div>
 
       {/* ── CONTENT ── */}
       <main style={{ animation: "fadeUp .5s .1s ease both" }}>
