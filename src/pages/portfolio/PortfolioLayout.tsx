@@ -142,7 +142,7 @@ const PortfolioLayout = () => {
           <div className="flex-1" />
 
           {/* Social icons + status */}
-          <div className="flex items-center gap-3 max-[640px]:gap-2">
+          <div className="flex items-center gap-3 max-[640px]:gap-4">
             {socialLinks.map((social) => (
               <a
                 key={social.name}
