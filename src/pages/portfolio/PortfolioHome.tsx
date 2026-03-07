@@ -1,26 +1,8 @@
-import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { 
-  ArrowUpRight, 
-  Star, 
-  Palette, 
-  Type, 
-  Grid3X3, 
-  Layers, 
-  Box, 
-  Component, 
-  Paintbrush, 
-  Ruler, 
-  Layout, 
-  Shapes,
-  Circle,
-  Square,
-  Baseline,
-  AlignCenter
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { ArrowUpRight, Star } from "lucide-react";
 import samanthaAvatar from "@/assets/samantha-avatar.jpeg";
+import DNAHelix from "@/components/portfolio/DNAHelix";
+import TokenGraph, { LEFT_NODES, LEFT_EDGES, RIGHT_NODES, RIGHT_EDGES } from "@/components/portfolio/TokenGraph";
 
 const testimonials = [
   {
@@ -66,28 +48,28 @@ const processSteps = [
     number: "001",
     category: "Product Audit",
     title: "Audit the Product",
-    description: "Map inconsistencies, UI debt, and team pain points.",
+    description: "Map inconsistencies, UI debt, and team pain points. Claude Code helps surface patterns across large inventories—fast.",
     deliverables: "UI inventory, issue list, priority map.",
   },
   {
     number: "002",
     category: "Foundations",
     title: "Define the Visual Language",
-    description: "Create core tokens and visual foundations.",
+    description: "Create core tokens and visual foundations. AI assists with naming analysis and semantic consistency at scale.",
     deliverables: "colors, typography, spacing, guidelines, naming rules.",
   },
   {
     number: "003",
     category: "Core Components",
     title: "Build the Component Library",
-    description: "Translate the visual language into scalable, reusable components.",
+    description: "Translate the visual language into scalable components. Claude Code accelerates variant scaffolding and accessibility annotations.",
     deliverables: "component set, variants, usage rules, accessibility notes.",
   },
   {
     number: "004",
     category: "Documentation",
     title: "Rollout, Educate, and Evolve",
-    description: "Launch the system into real workflows, collect feedback, and maintain it.",
+    description: "Launch the system into real workflows. AI drafts documentation from component specs—cutting time-to-publish significantly.",
     deliverables: "documentation, onboarding materials, migration plan.",
   },
 ];
@@ -115,253 +97,266 @@ const faqs = [
   },
 ];
 
-const designSystemIcons = [
-  Palette, Type, Grid3X3, Layers, Box, Component, 
-  Paintbrush, Ruler, Layout, Shapes, Circle, Square, Baseline, AlignCenter
-];
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex items-center gap-4 mb-4">
+      <span className="font-mono text-[0.72rem] font-light text-[#b0aba3] tracking-[0.12em] uppercase whitespace-nowrap">
+        {children}
+      </span>
+      <div className="flex-1 h-px bg-[#e5e0d7]" />
+    </div>
+  );
+}
 
 const PortfolioHome = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
-
-  // Generate a stable grid of icons (20 cols x 15 rows = 300 cells)
-  const gridIcons = useMemo(() => {
-    const icons = [];
-    for (let i = 0; i < 300; i++) {
-      icons.push(designSystemIcons[i % designSystemIcons.length]);
-    }
-    return icons;
-  }, []);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setMousePosition({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
-  };
-
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section 
-        className="relative min-h-[60vh] md:min-h-[80vh] flex items-center overflow-hidden"
-        onMouseMove={handleMouseMove}
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
+    <div className="w-full max-w-[1100px] mx-auto pb-28 max-[860px]:pb-16">
+
+      {/* ═══════════════════════════════════════
+          SECTION 1 — INTRO
+      ════════════════════════════════════════ */}
+      <section
+        id="intro"
+        className="relative border-b border-[#c9c3b8]"
+        style={{ animation: "fadeUp .5s ease both", animationDelay: "120ms" }}
       >
-        {/* Interactive Orange Glow Grid Overlay with Icons */}
-        <div 
-          className="absolute inset-0 pointer-events-none transition-opacity duration-300"
-          style={{
-            opacity: isHovering ? 1 : 0,
-            maskImage: `radial-gradient(circle 200px at ${mousePosition.x}px ${mousePosition.y}px, black, transparent)`,
-            WebkitMaskImage: `radial-gradient(circle 200px at ${mousePosition.x}px ${mousePosition.y}px, black, transparent)`,
-          }}
+        {/* Side ornaments — sit in the viewport margins, scroll away with the section */}
+        <div
+          className="absolute top-0 bottom-0 pointer-events-none overflow-hidden hidden min-[1300px]:block"
+          style={{ right: "100%", width: "calc((100vw - 1100px) / 2)" }}
         >
-          <div 
-            className="w-full h-full grid"
-            style={{
-              gridTemplateColumns: 'repeat(auto-fill, 60px)',
-              gridTemplateRows: 'repeat(auto-fill, 60px)',
-            }}
-          >
-            {gridIcons.map((Icon, index) => (
-              <div 
-                key={index}
-                className="w-[60px] h-[60px] border-[0.5px] border-primary/50 flex items-center justify-center"
-              >
-                <Icon className="w-4 h-4 text-primary/80" strokeWidth={1.5} />
-              </div>
-            ))}
-          </div>
+          <TokenGraph nodes={LEFT_NODES} edges={LEFT_EDGES} />
         </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-          <ScrollReveal>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-foreground mb-6 md:mb-8 leading-tight">
+        <div
+          className="absolute top-0 bottom-0 pointer-events-none overflow-hidden hidden min-[1300px]:block"
+          style={{ left: "100%", width: "calc((100vw - 1100px) / 2)" }}
+        >
+          <TokenGraph nodes={RIGHT_NODES} edges={RIGHT_EDGES} />
+        </div>
+
+        <div className="grid grid-cols-[1fr_auto] gap-0 min-[860px]:grid-cols-2 max-[860px]:grid-cols-1">
+          <div className="px-12 pt-[52px] pb-14 border-r border-[#e5e0d7] max-[860px]:border-r-0 max-[860px]:border-b max-[860px]:pb-10 max-[860px]:px-7 max-[860px]:pt-10">
+            <p className="font-mono text-[0.6rem] font-light text-[#b0aba3] tracking-[0.12em] uppercase mb-8">
+              Hello
+            </p>
+            <h1 className="font-grotesk font-normal text-[3rem] leading-[1.05] tracking-[-0.025em] text-[#1c1916] mb-6 max-[860px]:text-[2.2rem]">
               Hi, I'm Dhika.
             </h1>
-          </ScrollReveal>
-          <ScrollReveal delay={0.1}>
-            <p className="text-lg sm:text-xl md:text-2xl text-foreground-secondary mb-3 md:mb-4 max-w-2xl">
+            <p className="font-grotesk text-[1.15rem] leading-[1.75] text-[#6e6a62] max-w-[420px]">
               I'm a UI designer and design-system architect from Purwokerto, Indonesia.
             </p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.2}>
-            <p className="text-lg sm:text-xl md:text-2xl text-foreground-secondary mb-8 md:mb-12 max-w-2xl">
-              I spend my time on design systems, UI, accessibility, and building things that help real people.
+            <p className="font-grotesk text-[1.15rem] leading-[1.75] text-[#6e6a62] max-w-[420px] mt-2 mb-10">
+              I work across design systems, UI, and accessibility—using AI tools like Claude Code to accelerate foundation audits, automate token naming, and draft documentation faster than ever.
             </p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.3}>
             <a href="mailto:ui.dhika@gmail.com">
-              <Button className="group">
+              <button className="group inline-flex items-center gap-2 font-mono text-[0.68rem] tracking-[0.06em] bg-[#c8622e] text-white px-5 py-2.5 transition-colors duration-200 hover:bg-[#b5571a]">
                 Hire Me
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </Button>
+                <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </button>
             </a>
-          </ScrollReveal>
+          </div>
+          <div className="flex items-center justify-center py-10 min-w-0 max-[860px]:py-6">
+            <DNAHelix />
+          </div>
         </div>
       </section>
 
-      {/* Case Studies Section */}
-      <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <ScrollReveal>
-            <div className="mb-8 md:mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6">
-                Case Studies.
-              </h2>
-              <p className="text-base md:text-lg text-foreground-secondary max-w-3xl">
-                A collection of design system case study, showcasing end-to-end processes from audit to documentation.
+      {/* ═══════════════════════════════════════
+          SECTION 2 — CASE STUDIES
+          Ghost-number editorial rows
+      ════════════════════════════════════════ */}
+      <section
+        id="case-studies"
+        className="px-12 pt-16 pb-20 border-b border-[#c9c3b8] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        style={{ animation: "fadeUp .5s ease both", animationDelay: "200ms" }}
+      >
+        <div className="flex items-center justify-between mb-3">
+          <SectionLabel>Case Studies</SectionLabel>
+          <span className="font-mono text-[0.58rem] font-light text-[#b0aba3] mb-8 ml-4 flex-shrink-0">
+            3 works
+          </span>
+        </div>
+
+        <div>
+          {caseStudies.map((study, index) => (
+            <Link
+              key={study.number}
+              to={study.href}
+              className="group relative grid grid-cols-[64px_1fr_20px] items-start py-7 border-b border-[#e5e0d7] first:border-t gap-5 no-underline transition-all duration-200"
+            >
+              {/* Ghost number */}
+              <span className="font-mono text-[2.8rem] font-light leading-none select-none text-[#ece8e2] group-hover:text-[rgba(200,98,46,0.18)] transition-colors duration-300 -mt-1">
+                {study.number}
+              </span>
+
+              <div>
+                <h3 className="font-grotesk font-normal text-[1.2rem] text-[#1c1916] group-hover:text-[#c8622e] transition-colors duration-200 leading-snug mb-2">
+                  {study.title}
+                </h3>
+                <p className="font-mono text-[0.82rem] font-light text-[#b0aba3] leading-relaxed">
+                  {study.description}
+                </p>
+              </div>
+
+              <ArrowUpRight className="w-4 h-4 text-[#b0aba3] opacity-0 group-hover:opacity-100 group-hover:text-[#c8622e] transition-all duration-200 mt-1 flex-shrink-0" />
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════
+          SECTION 3 — PROCESS
+          Horizontal 4-column stepper
+      ════════════════════════════════════════ */}
+      <section
+        id="process"
+        className="border-b border-[#c9c3b8]"
+        style={{ animation: "fadeUp .5s ease both", animationDelay: "280ms" }}
+      >
+        <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
+          <SectionLabel>The process</SectionLabel>
+          <h2 className="font-grotesk font-normal text-[2rem] leading-tight tracking-[-0.015em] text-[#1c1916] mb-3 -mt-2">
+            A structured approach to building systems
+          </h2>
+          <p className="font-grotesk text-[1.1rem] leading-[1.75] text-[#6e6a62] mb-10">
+            UI debt compounds fast. A design system brings order—and with AI tools like Claude Code, I move through audits, token naming, and documentation in a fraction of the usual time.
+          </p>
+        </div>
+
+        {/* 4-column stepper */}
+        <div className="grid grid-cols-4 border-t border-[#e5e0d7] max-[640px]:grid-cols-2 max-[400px]:grid-cols-1">
+          {processSteps.map((step, i) => (
+            <div
+              key={step.number}
+              className={`px-8 py-10 flex flex-col max-[860px]:px-6 max-[860px]:py-8 ${
+                i < 3 ? "border-r border-[#e5e0d7]" : ""
+              } max-[640px]:${i % 2 === 0 ? "border-r border-[#e5e0d7]" : ""} max-[640px]:${i < 2 ? "border-b border-[#e5e0d7]" : ""}`}
+            >
+              {/* Step number + connecting dot */}
+              <div className="flex items-center gap-3 mb-6">
+                <span className="font-mono text-[0.55rem] text-[#c8622e] tracking-[0.08em]">
+                  {step.number}
+                </span>
+                <div className="flex-1 h-px bg-[#e5e0d7]" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#1c1916] flex-shrink-0" />
+              </div>
+
+              <span className="font-mono text-[0.5rem] text-[#b0aba3] tracking-[0.1em] uppercase mb-3">
+                {step.category}
+              </span>
+              <h3 className="font-grotesk font-normal text-[1rem] text-[#1c1916] leading-snug mb-3">
+                {step.title}
+              </h3>
+              <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed mb-auto">
+                {step.description}
+              </p>
+              <p className="font-mono text-[0.72rem] font-light text-[#b0aba3] mt-5 pt-4 border-t border-[#e5e0d7] leading-relaxed">
+                <span className="text-[#9b9690]">↳ </span>{step.deliverables}
               </p>
             </div>
-          </ScrollReveal>
-
-          <div className="grid gap-6 md:gap-8">
-            {caseStudies.map((study, index) => (
-              <ScrollReveal key={study.number} delay={index * 0.1} variant="fade-up">
-                <Link
-                  to={study.href}
-                  className="group block rounded-2xl border border-border overflow-hidden 
-                             hover:border-primary/50 transition-all duration-300 
-                             hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5"
-                >
-                  {/* Image - Full width, prominent */}
-                  <div className="relative aspect-[16/9] bg-background-surface overflow-hidden">
-                    <img
-                      src={study.image}
-                      alt={study.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    {/* Gradient overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="p-5 md:p-8 bg-background-surface">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <span className="text-xs text-primary font-mono">{study.number}</span>
-                        <h3 className="text-xl md:text-2xl font-semibold text-foreground mt-2 mb-3 group-hover:text-primary transition-colors duration-300">
-                          {study.title}
-                        </h3>
-                        <p className="text-sm md:text-base text-foreground-secondary">
-                          {study.description}
-                        </p>
-                      </div>
-                      <ArrowUpRight className="w-5 h-5 text-foreground-muted group-hover:text-primary 
-                                               group-hover:translate-x-0.5 group-hover:-translate-y-0.5 
-                                               transition-all duration-300 flex-shrink-0 mt-1" />
-                    </div>
-                  </div>
-                </Link>
-              </ScrollReveal>
-            ))}
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-background-surface">
-        <div className="max-w-6xl mx-auto">
-          <ScrollReveal>
-            <div className="mb-8 md:mb-12">
-              <span className="text-xs sm:text-sm text-primary font-mono">The process</span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 md:mt-4 mb-4 md:mb-6">
-                A structured approach to building systems
-              </h2>
-              <p className="text-base md:text-lg text-foreground-secondary max-w-3xl">
-                Products grow, teams change, and UI debt compounds. A design-system turns that chaos into a single, living source of truth—so designers ship faster, engineers reuse instead of rebuild, stakeholders see consistent brand quality, and accessibility best-practice comes "out of the box." In short: speed, consistency, scalability, and shared understanding.
-              </p>
+      {/* ═══════════════════════════════════════
+          SECTION 4 — STORIES
+          Full-bleed pull quotes
+      ════════════════════════════════════════ */}
+      <section
+        id="stories"
+        className="border-b border-[#c9c3b8]"
+        style={{ animation: "fadeUp .5s ease both", animationDelay: "360ms" }}
+      >
+        <div className="px-12 pt-16 pb-0 max-[860px]:px-7 max-[860px]:pt-12">
+          <SectionLabel>Stories</SectionLabel>
+        </div>
+
+        <div>
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className={`px-12 py-12 max-[860px]:px-7 max-[860px]:py-10 ${
+                index < testimonials.length - 1 ? "border-b border-[#e5e0d7]" : ""
+              }`}
+            >
+              {/* Large opening quote mark */}
+              <span className="font-grotesk text-[5rem] leading-none text-[#c8622e] select-none block -mb-3">
+                "
+              </span>
+
+              {/* Quote text */}
+              <blockquote className="font-grotesk font-normal text-[1.3rem] leading-[1.75] text-[#1c1916] max-w-[720px] mb-8">
+                {testimonial.quote}
+              </blockquote>
+
+              {/* Attribution row */}
+              <div className="flex items-center gap-3">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-8 h-8 rounded-full object-cover flex-shrink-0"
+                />
+                <div className="flex items-baseline gap-2">
+                  <span className="font-grotesk text-[0.9rem] text-[#1c1916]">
+                    {testimonial.name}
+                  </span>
+                  <span className="font-mono text-[0.56rem] font-light text-[#b0aba3]">
+                    — {testimonial.role}
+                  </span>
+                </div>
+                <div className="ml-auto flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-2.5 h-2.5 fill-[#c8622e] text-[#c8622e]" />
+                  ))}
+                  <span className="font-mono text-[0.52rem] font-light text-[#b0aba3] ml-1.5">5.0</span>
+                </div>
+              </div>
             </div>
-          </ScrollReveal>
-
-          <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
-            {processSteps.map((step, index) => (
-              <ScrollReveal key={step.number} delay={index * 0.1} variant="scale">
-                <div className="card-hover p-4 md:p-6 bg-background-elevated rounded-xl border border-border h-full hover:border-primary/30">
-                  <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
-                    <span className="text-xs sm:text-sm text-primary font-mono">{step.number}</span>
-                    <span className="text-xs sm:text-sm text-foreground-muted font-mono">{step.category}</span>
-                  </div>
-                  <h3 className="text-lg md:text-xl font-semibold text-foreground mb-2">{step.title}</h3>
-                  <p className="text-sm md:text-base text-foreground-secondary mb-3 md:mb-4">{step.description}</p>
-                  <p className="text-xs md:text-sm text-foreground-muted">
-                    <span className="text-foreground-secondary">Deliverables:</span> {step.deliverables}
-                  </p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* Testimonial Section */}
-      <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <ScrollReveal>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-8 md:mb-12">Stories.</h2>
-          </ScrollReveal>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <ScrollReveal key={index} delay={index * 0.1} variant="scale">
-                <div className="card-hover p-6 md:p-8 bg-background-elevated/50 backdrop-blur-sm rounded-xl border border-border h-full flex flex-col hover:border-primary/30">
-                  {/* Avatar and Name */}
-                  <div className="flex items-center gap-4 mb-6">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-14 h-14 rounded-full object-cover ring-2 ring-border"
-                    />
-                    <div>
-                      <p className="font-medium text-foreground">{testimonial.name}</p>
-                      <p className="text-sm text-foreground-muted">{testimonial.role}</p>
-                    </div>
-                  </div>
-                  
-                  {/* Star Rating */}
-                  <div className="flex items-center gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                    ))}
-                    <span className="ml-2 text-sm text-foreground-secondary">5.0</span>
-                  </div>
-                  
-                  {/* Quote */}
-                  <blockquote className="text-sm md:text-base text-foreground-secondary leading-relaxed flex-1">
-                    "{testimonial.quote}"
-                  </blockquote>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
+      {/* ═══════════════════════════════════════
+          SECTION 5 — FAQ
+          Two-column newspaper split (always open)
+      ════════════════════════════════════════ */}
+      <section
+        id="faq"
+        className="border-b border-[#c9c3b8]"
+        style={{ animation: "fadeUp .5s ease both", animationDelay: "440ms" }}
+      >
+        <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
+          <SectionLabel>FAQ</SectionLabel>
+        </div>
+
+        <div className="border-t border-[#e5e0d7]">
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className="grid grid-cols-[1fr_1fr] border-b border-[#e5e0d7] max-[640px]:grid-cols-1"
+            >
+              {/* Question */}
+              <div className="px-12 py-8 border-r border-[#e5e0d7] max-[860px]:px-7 max-[640px]:border-r-0 max-[640px]:border-b max-[640px]:py-6">
+                <span className="font-mono text-[0.52rem] text-[#c8622e] tracking-[0.1em] block mb-3">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p className="font-grotesk text-[1.05rem] leading-[1.6] text-[#1c1916]">
+                  {faq.question}
+                </p>
+              </div>
+
+              {/* Answer */}
+              <div className="px-12 py-8 max-[860px]:px-7 max-[640px]:py-6">
+                <p className="font-mono text-[0.72rem] font-light text-[#6e6a62] leading-[1.85]">
+                  {faq.answer}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-background-surface">
-        <div className="max-w-4xl mx-auto">
-          <ScrollReveal>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-8 md:mb-12">FAQ.</h2>
-          </ScrollReveal>
-          <div className="space-y-4 md:space-y-6">
-            {faqs.map((faq, index) => (
-              <ScrollReveal key={index} delay={index * 0.05}>
-                <details className="group card-hover bg-background-elevated rounded-xl border border-border overflow-hidden hover:border-primary/50">
-                  <summary className="flex items-center justify-between p-4 md:p-6 cursor-pointer list-none transition-colors">
-                    <span className="text-base md:text-lg font-medium text-foreground pr-4 md:pr-8">{faq.question}</span>
-                    <span className="text-xl md:text-2xl text-foreground-muted group-open:rotate-45 transition-transform flex-shrink-0">+</span>
-                  </summary>
-                  <div className="px-4 md:px-6 pb-4 md:pb-6 text-sm md:text-base text-foreground-secondary">
-                    {faq.answer}
-                  </div>
-                </details>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
+
     </div>
   );
 };

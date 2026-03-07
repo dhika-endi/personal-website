@@ -1,359 +1,406 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { ArrowUpRight } from "lucide-react";
+
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex items-center gap-4 mb-4">
+      <span className="font-mono text-[0.72rem] font-light text-[#b0aba3] tracking-[0.12em] uppercase whitespace-nowrap">
+        {children}
+      </span>
+      <div className="flex-1 h-px bg-[#e5e0d7]" />
+    </div>
+  );
+}
+
+function CaseImage({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="mt-6 border border-[#e5e0d7]">
+      <img src={src} alt={alt} className="w-full block" />
+    </div>
+  );
+}
 
 const TokenAirtableCaseStudy = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Back Navigation */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-6 md:pt-8">
-        <Link 
-          to="/case-studies" 
-          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm md:text-base"
+    <div className="w-full max-w-[1100px] mx-auto pb-28 max-[860px]:pb-16">
+
+      {/* ── BACK NAV + TITLE ── */}
+      <section
+        className="px-12 pt-12 pb-16 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-10"
+        style={{ animation: "fadeUp .5s ease both" }}
+      >
+        <Link
+          to="/case-studies"
+          className="inline-flex items-center gap-1 font-mono text-[0.65rem] tracking-[0.06em] text-[#b0aba3] hover:text-[#1c1916] transition-colors no-underline mb-12 uppercase"
         >
-          <ArrowLeft className="w-4 h-4" />
-          Back to Case Studies
+          ← Case Studies
+        </Link>
+
+        <p className="font-mono text-[0.6rem] font-light text-[#b0aba3] tracking-[0.12em] uppercase mb-3">
+          003 · 2025
+        </p>
+        <h1 className="font-grotesk font-normal text-[3rem] leading-[1.05] tracking-[-0.025em] text-[#1c1916] max-w-[700px] max-[860px]:text-[2.2rem]">
+          Airtable Ultimate Token Dictionary.
+        </h1>
+      </section>
+
+      {/* ── HERO IMAGE ── */}
+      <div className="border-b border-[#e5e0d7]" style={{ animation: "fadeUp .5s .1s ease both" }}>
+        <img
+          src="https://framerusercontent.com/images/nPyd0r1sjpLCg0BC8enlmKujdE.png"
+          alt="Token Airtable Hero"
+          className="w-full block"
+        />
+      </div>
+
+      {/* ── INTRODUCTION ── */}
+      <section
+        className="px-12 pt-16 pb-20 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        style={{ animation: "fadeUp .5s .15s ease both" }}
+      >
+        <p className="font-grotesk text-[1.15rem] leading-[1.8] text-[#6e6a62] max-w-[680px]">
+          A single source of truth for every design token—names, values, and usage guidelines—managed in Airtable. This system eliminates ad-hoc naming, enforces consistent conventions, and streamlines the handoff between design and development.
+        </p>
+      </section>
+
+      {/* ── PROBLEM / SOLUTION / IMPACT ── */}
+      <section
+        className="border-b border-[#e5e0d7]"
+        style={{ animation: "fadeUp .5s .2s ease both" }}
+      >
+        <div className="grid grid-cols-3 max-[640px]:grid-cols-1">
+          {[
+            {
+              label: "Problem",
+              content: (
+                <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed">
+                  Ad-hoc token names created confusion. Teams used inconsistent naming patterns, making it hard to find, reuse, or update tokens.
+                </p>
+              ),
+            },
+            {
+              label: "Solution",
+              content: (
+                <ul className="space-y-2">
+                  {["Centralized token database in Airtable", "Formula-driven naming conventions"].map((item) => (
+                    <li key={item} className="flex gap-2.5">
+                      <span className="font-mono text-[0.6rem] text-[#c8622e] mt-1 flex-shrink-0">—</span>
+                      <span className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              ),
+            },
+            {
+              label: "Impact",
+              content: (
+                <ul className="space-y-2">
+                  {["80% reduction in naming conflicts", "75% faster token lookup", "50% faster onboarding"].map((item) => (
+                    <li key={item} className="flex gap-2.5">
+                      <span className="font-mono text-[0.6rem] text-[#c8622e] mt-1 flex-shrink-0">—</span>
+                      <span className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              ),
+            },
+          ].map((col, i, arr) => (
+            <div
+              key={col.label}
+              className={`px-12 py-12 max-[860px]:px-7 max-[860px]:py-10 ${i < arr.length - 1 ? "border-r border-[#e5e0d7] max-[640px]:border-r-0 max-[640px]:border-b" : ""}`}
+            >
+              <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-4">{col.label}</h3>
+              {col.content}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── SUCCESS CRITERIA ── */}
+      <section
+        className="px-12 pt-16 pb-20 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        style={{ animation: "fadeUp .5s .22s ease both" }}
+      >
+        <SectionLabel>Success Criteria</SectionLabel>
+        <ul className="space-y-5">
+          {[
+            { label: "Single Source of Truth", text: "Every token lives in one place with clear ownership." },
+            { label: "Clear Naming Pattern", text: "Predictable, self-documenting token names." },
+            { label: "Governance Workflow", text: "Approval process for new tokens." },
+            { label: "Fast Retrieval", text: "Search and filter by category, component, or property." },
+            { label: "Future-Proof", text: "Scalable structure for new tokens and categories." },
+          ].map((item) => (
+            <li key={item.label} className="flex gap-3">
+              <span className="font-mono text-[0.6rem] text-[#c8622e] mt-1 flex-shrink-0">—</span>
+              <span className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed">
+                <span className="text-[#1c1916]">{item.label}:</span> {item.text}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* ── TOKEN CATEGORIES ── */}
+      <section
+        className="px-12 pt-16 pb-20 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        style={{ animation: "fadeUp .5s .24s ease both" }}
+      >
+        <SectionLabel>Token Categories</SectionLabel>
+        <div className="flex flex-wrap gap-2">
+          {["Color", "Font", "Space", "Size", "Border", "Border Radius", "Gradient", "Shadow", "Motion", "Time", "Icon"].map((cat) => (
+            <span
+              key={cat}
+              className="font-mono text-[0.68rem] font-light text-[#6e6a62] border border-[#e5e0d7] px-3 py-1.5"
+            >
+              {cat}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      {/* ── TOKEN TAXONOMY ── */}
+      <section
+        className="border-b border-[#e5e0d7]"
+        style={{ animation: "fadeUp .5s .26s ease both" }}
+      >
+        <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
+          <SectionLabel>Token Taxonomy</SectionLabel>
+        </div>
+
+        {/* Naming Pattern */}
+        <div className="px-12 pb-14 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pb-10">
+          <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-4 pt-10 max-[860px]:pt-8">
+            Naming Pattern
+          </h3>
+          <code className="block font-mono text-[0.8rem] text-[#c8622e] bg-[#f0ece4] border border-[#e5e0d7] px-5 py-4 mb-6 overflow-x-auto">
+            component-variant-type-element-property-state-direction
+          </code>
+          <CaseImage
+            src="https://framerusercontent.com/images/Belu1ej5U57rBHmlt7gbjw8duM.png"
+            alt="Token Taxonomy"
+          />
+        </div>
+
+        {/* Level Breakdown */}
+        <div className="px-12 pb-14 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pb-10">
+          <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-4 pt-10 max-[860px]:pt-8">
+            Level Breakdown
+          </h3>
+          <ol className="space-y-3">
+            {[
+              { level: "Level 1 – Component", desc: "What component uses this token (button, input, card)" },
+              { level: "Level 2 – Variant", desc: "Which variant (primary, secondary, ghost)" },
+              { level: "Level 3 – Type", desc: "Token type (color, space, size)" },
+              { level: "Level 4 – Element", desc: "Which part (label, icon, container)" },
+              { level: "Level 5 – Property", desc: "CSS property (background, border, padding)" },
+              { level: "Level 6 – State", desc: "Interaction state (default, hover, pressed)" },
+              { level: "Level 7 – Direction", desc: "Directional modifier (top, left, x, y)" },
+            ].map((item) => (
+              <li key={item.level} className="font-mono text-[0.8rem] font-light text-[#6e6a62]">
+                <span className="text-[#1c1916]">{item.level}:</span> {item.desc}
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        {/* Spacing Token Example */}
+        <div className="px-12 pb-14 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pb-10">
+          <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">
+            Spacing Token Example
+          </h3>
+          <CaseImage
+            src="https://framerusercontent.com/images/ocOZWU0DP1bAriHLhmNFK6q0.png"
+            alt="Spacing Token Example"
+          />
+        </div>
+
+        {/* Color Token Example */}
+        <div className="px-12 pb-14 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pb-10">
+          <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">
+            Color Token Example
+          </h3>
+          <CaseImage
+            src="https://framerusercontent.com/images/9KVWf2JLVaY1Vz8lOgvpuvY1c60.png"
+            alt="Color Token Example"
+          />
+        </div>
+
+        {/* Why it works */}
+        <div className="px-12 pb-20 max-[860px]:px-7 max-[860px]:pb-14">
+          <div className="mt-10 border-l-2 border-[#c8622e] pl-6">
+            <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-3">Why It Works</h3>
+            <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed max-w-[600px]">
+              This hierarchical naming convention makes tokens self-documenting. Anyone can read a token name like{" "}
+              <code className="font-mono text-[0.75rem] text-[#c8622e] bg-[#f0ece4] px-1.5 py-0.5">
+                button-primary-color-label-text-hover
+              </code>{" "}
+              and immediately understand its purpose without looking up documentation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── AIRTABLE SCHEMA ── */}
+      <section
+        className="border-b border-[#e5e0d7]"
+        style={{ animation: "fadeUp .5s .28s ease both" }}
+      >
+        <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
+          <SectionLabel>Airtable Schema</SectionLabel>
+        </div>
+
+        {[
+          {
+            title: "Core Table",
+            text: "The foundation table containing primitive values—raw colors, spacing units, and font specs.",
+            image: "https://framerusercontent.com/images/vieb47GfUBUYpDgMLlQptv9eZc.png",
+            alt: "Core Table",
+          },
+          {
+            title: "Components Table",
+            text: "Lists every component that consumes tokens, enabling cross-referencing and impact analysis.",
+            image: "https://framerusercontent.com/images/pCcoI4JgfSW0MJkoGoBczGsK4hk.png",
+            alt: "Components Table",
+          },
+          {
+            title: "List of Tokens Table",
+            text: "The master token registry with formula-generated names, linked primitives, and usage context.",
+            image: "https://framerusercontent.com/images/QuBwnlcfyEKJtINDagm7BNlAkXc.png",
+            alt: "List of Tokens",
+          },
+        ].map((item, i, arr) => (
+          <div
+            key={item.title}
+            className={`px-12 pb-14 max-[860px]:px-7 max-[860px]:pb-10 ${i < arr.length - 1 ? "border-b border-[#e5e0d7]" : "pb-20 max-[860px]:pb-14"}`}
+          >
+            <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">{item.title}</h3>
+            <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">{item.text}</p>
+            <CaseImage src={item.image} alt={item.alt} />
+          </div>
+        ))}
+      </section>
+
+      {/* ── FORMULA MAGIC ── */}
+      <section
+        className="border-b border-[#e5e0d7]"
+        style={{ animation: "fadeUp .5s .3s ease both" }}
+      >
+        <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
+          <SectionLabel>Airtable Formula Magic</SectionLabel>
+        </div>
+
+        {/* Self-building formula */}
+        <div className="px-12 pb-14 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pb-10">
+          <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">
+            Self-Building Name Formula
+          </h3>
+          <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed mb-5 max-w-[560px]">
+            Token names are generated automatically using CONCATENATE formulas that pull from linked fields:
+          </p>
+          <pre className="font-mono text-[0.75rem] text-[#c8622e] bg-[#f0ece4] border border-[#e5e0d7] px-5 py-4 overflow-x-auto leading-relaxed mb-4">
+{`CONCATENATE(
+  {Component}, "-",
+  {Variant},   "-",
+  {Type},      "-",
+  {Element},   "-",
+  {Property},  "-",
+  {State}
+)`}
+          </pre>
+          <CaseImage
+            src="https://framerusercontent.com/images/pyTZywrvpdVUJFB5qfxTLGM60.png"
+            alt="Formula"
+          />
+        </div>
+
+        {/* Component Field Links */}
+        <div className="px-12 pb-14 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pb-10">
+          <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">
+            Component Field Links
+          </h3>
+          <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">
+            Linked records connect tokens to their parent components, enabling dependency tracking.
+          </p>
+          <CaseImage
+            src="https://framerusercontent.com/images/TMyFjlvD124m6yFfApgm7caw.png"
+            alt="Component Field"
+          />
+        </div>
+
+        {/* Primitive Field Links */}
+        <div className="px-12 pb-20 max-[860px]:px-7 max-[860px]:pb-14">
+          <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">
+            Primitive Field Links
+          </h3>
+          <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">
+            Semantic tokens link back to primitive values, creating a traceable hierarchy.
+          </p>
+          <CaseImage
+            src="https://framerusercontent.com/images/PmxUSBW5z2kthjQwoak0iLPyCOg.png"
+            alt="Primitive Field"
+          />
+        </div>
+      </section>
+
+      {/* ── LESSONS & NEXT STEPS ── */}
+      <section
+        className="px-12 pt-16 pb-20 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        style={{ animation: "fadeUp .5s .32s ease both" }}
+      >
+        <SectionLabel>Lessons & Next Steps</SectionLabel>
+
+        <div className="grid min-[640px]:grid-cols-2 gap-12">
+          <div>
+            <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-4">Key Takeaways</h3>
+            <ul className="space-y-3">
+              {[
+                "Naming conventions prevent chaos at scale",
+                "Formulas reduce human error",
+                "Linked tables enable powerful queries",
+                "Documentation embedded in the system itself",
+              ].map((item) => (
+                <li key={item} className="flex gap-2.5">
+                  <span className="font-mono text-[0.6rem] text-[#c8622e] mt-1 flex-shrink-0">—</span>
+                  <span className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-4">What's Next</h3>
+            <ul className="space-y-3">
+              {[
+                "Automated sync to Figma variables",
+                "Export scripts for CSS/JSON tokens",
+                "Version history and rollback support",
+              ].map((item) => (
+                <li key={item} className="flex gap-2.5">
+                  <span className="font-mono text-[0.6rem] text-[#c8622e] mt-1 flex-shrink-0">—</span>
+                  <span className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ── NAVIGATION ── */}
+      <div className="px-12 py-12 flex justify-between items-center max-[860px]:px-7 max-[860px]:py-10">
+        <Link
+          to="/case-studies/component-docs"
+          className="font-mono text-[0.65rem] tracking-[0.06em] text-[#b0aba3] hover:text-[#1c1916] transition-colors no-underline uppercase"
+        >
+          ← Component Docs
+        </Link>
+        <Link
+          to="/case-studies"
+          className="inline-flex items-center gap-1.5 font-mono text-[0.65rem] tracking-[0.06em] text-[#1c1916] hover:text-[#c8622e] transition-colors no-underline uppercase"
+        >
+          All Case Studies
+          <ArrowUpRight className="w-3 h-3" />
         </Link>
       </div>
 
-      {/* Hero Section */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-16">
-        <ScrollReveal>
-          <div className="flex items-center gap-4 mb-4 md:mb-6">
-            <span className="text-muted-foreground font-mono text-sm">2025</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-6 md:mb-8">
-            Airtable Ultimate Token Dictionary.
-          </h1>
-        </ScrollReveal>
-        <ScrollReveal delay={0.1} variant="scale">
-          <img 
-            src="https://framerusercontent.com/images/nPyd0r1sjpLCg0BC8enlmKujdE.png" 
-            alt="Token Airtable Hero"
-            className="w-full rounded-lg"
-          />
-        </ScrollReveal>
-      </section>
-
-      {/* Introduction */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12">
-        <ScrollReveal>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            A single source of truth for every design token—names, values, and usage guidelines—managed 
-            in Airtable. This system eliminates ad-hoc naming, enforces consistent conventions, and 
-            streamlines the handoff between design and development.
-          </p>
-        </ScrollReveal>
-      </section>
-
-      {/* Problem, Solution, Impact */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-3 gap-8">
-          <ScrollReveal delay={0.1}>
-            <div>
-              <h3 className="text-foreground font-medium mb-4">Problem</h3>
-              <p className="text-muted-foreground">
-                Ad-hoc token names created confusion. Teams used inconsistent naming patterns, 
-                making it hard to find, reuse, or update tokens.
-              </p>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal delay={0.15}>
-            <div>
-              <h3 className="text-foreground font-medium mb-4">Solution</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• Centralized token database in Airtable</li>
-                <li>• Formula-driven naming conventions</li>
-              </ul>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal delay={0.2}>
-            <div>
-              <h3 className="text-foreground font-medium mb-4">Impact</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• 80% reduction in naming conflicts</li>
-                <li>• 75% faster token lookup</li>
-                <li>• 50% faster onboarding</li>
-              </ul>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Success Criteria */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <ScrollReveal>
-          <h2 className="text-2xl font-medium mb-6">Success Criteria</h2>
-          <ul className="space-y-4 text-muted-foreground">
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span><strong className="text-foreground">Single Source of Truth:</strong> Every token lives in one place with clear ownership.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span><strong className="text-foreground">Clear Naming Pattern:</strong> Predictable, self-documenting token names.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span><strong className="text-foreground">Governance Workflow:</strong> Approval process for new tokens.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span><strong className="text-foreground">Fast Retrieval:</strong> Search and filter by category, component, or property.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span><strong className="text-foreground">Future-Proof:</strong> Scalable structure for new tokens and categories.</span>
-            </li>
-          </ul>
-        </ScrollReveal>
-      </section>
-
-      {/* Token Categories */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <ScrollReveal>
-          <h2 className="text-2xl font-medium mb-6">Token Categories</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {["Color", "Font", "Space", "Size", "Border", "Border Radius", "Gradient", "Shadow", "Motion", "Time", "Icon"].map((category, index) => (
-              <ScrollReveal key={category} delay={index * 0.05} variant="scale">
-                <div className="bg-card border border-border rounded-lg p-4 text-center">
-                  <span className="text-muted-foreground">{category}</span>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </ScrollReveal>
-      </section>
-
-      {/* Token Taxonomy */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <ScrollReveal>
-          <h2 className="text-2xl font-medium mb-8">Token Taxonomy</h2>
-        </ScrollReveal>
-        
-        <ScrollReveal delay={0.1}>
-          <div className="mb-8">
-            <h3 className="text-xl font-medium mb-4">Naming Pattern</h3>
-            <code className="block bg-card border border-border rounded-lg p-4 text-sm mb-6 overflow-x-auto">
-              component-variant-type-element-property-state-direction
-            </code>
-            <img 
-              src="https://framerusercontent.com/images/Belu1ej5U57rBHmlt7gbjw8duM.png" 
-              alt="Token Taxonomy"
-              className="w-full rounded-lg"
-            />
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.15}>
-          <div className="mb-8">
-            <h3 className="text-xl font-medium mb-4">Level Breakdown</h3>
-            <ol className="space-y-3 text-muted-foreground">
-              <li><strong className="text-foreground">Level 1 - Component:</strong> What component uses this token (button, input, card)</li>
-              <li><strong className="text-foreground">Level 2 - Variant:</strong> Which variant (primary, secondary, ghost)</li>
-              <li><strong className="text-foreground">Level 3 - Type:</strong> Token type (color, space, size)</li>
-              <li><strong className="text-foreground">Level 4 - Element:</strong> Which part (label, icon, container)</li>
-              <li><strong className="text-foreground">Level 5 - Property:</strong> CSS property (background, border, padding)</li>
-              <li><strong className="text-foreground">Level 6 - State:</strong> Interaction state (default, hover, pressed)</li>
-              <li><strong className="text-foreground">Level 7 - Direction:</strong> Directional modifier (top, left, x, y)</li>
-            </ol>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.2}>
-          <div className="mb-12">
-            <h3 className="text-xl font-medium mb-4">Spacing Token Example</h3>
-            <img 
-              src="https://framerusercontent.com/images/ocOZWU0DP1bAriHLhmNFK6q0.png" 
-              alt="Spacing Token Example"
-              className="w-full rounded-lg"
-            />
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.25}>
-          <div className="mb-8">
-            <h3 className="text-xl font-medium mb-4">Color Token Example</h3>
-            <img 
-              src="https://framerusercontent.com/images/9KVWf2JLVaY1Vz8lOgvpuvY1c60.png" 
-              alt="Color Token Example"
-              className="w-full rounded-lg"
-            />
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.3}>
-          <div className="bg-card border border-border rounded-lg p-6">
-            <h3 className="text-lg font-medium mb-3">Why It Works</h3>
-            <p className="text-muted-foreground">
-              This hierarchical naming convention makes tokens self-documenting. Anyone can read a token name 
-              like <code className="bg-muted px-2 py-1 rounded">button-primary-color-label-text-hover</code> and 
-              immediately understand its purpose without looking up documentation.
-            </p>
-          </div>
-        </ScrollReveal>
-      </section>
-
-      {/* Airtable Schema */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <ScrollReveal>
-          <h2 className="text-2xl font-medium mb-8">Airtable Schema</h2>
-        </ScrollReveal>
-        
-        <ScrollReveal delay={0.1}>
-          <div className="mb-12">
-            <h3 className="text-xl font-medium mb-4">Core Table</h3>
-            <p className="text-muted-foreground mb-6">
-              The foundation table containing primitive values—raw colors, spacing units, and font specs.
-            </p>
-            <img 
-              src="https://framerusercontent.com/images/vieb47GfUBUYpDgMLlQptv9eZc.png" 
-              alt="Core Table"
-              className="w-full rounded-lg"
-            />
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.15}>
-          <div className="mb-12">
-            <h3 className="text-xl font-medium mb-4">Components Table</h3>
-            <p className="text-muted-foreground mb-6">
-              Lists every component that consumes tokens, enabling cross-referencing and impact analysis.
-            </p>
-            <img 
-              src="https://framerusercontent.com/images/pCcoI4JgfSW0MJkoGoBczGsK4hk.png" 
-              alt="Components Table"
-              className="w-full rounded-lg"
-            />
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.2}>
-          <div className="mb-8">
-            <h3 className="text-xl font-medium mb-4">List of Tokens Table</h3>
-            <p className="text-muted-foreground mb-6">
-              The master token registry with formula-generated names, linked primitives, and usage context.
-            </p>
-            <img 
-              src="https://framerusercontent.com/images/QuBwnlcfyEKJtINDagm7BNlAkXc.png" 
-              alt="List of Tokens"
-              className="w-full rounded-lg"
-            />
-          </div>
-        </ScrollReveal>
-      </section>
-
-      {/* Airtable Formula */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <ScrollReveal>
-          <h2 className="text-2xl font-medium mb-8">Airtable Formula Magic</h2>
-        </ScrollReveal>
-        
-        <ScrollReveal delay={0.1}>
-          <div className="mb-8">
-            <h3 className="text-xl font-medium mb-4">Self-Building Name Formula</h3>
-            <p className="text-muted-foreground mb-4">
-              Token names are generated automatically using CONCATENATE formulas that pull from linked fields:
-            </p>
-            <pre className="bg-card border border-border rounded-lg p-4 text-sm overflow-x-auto mb-6">
-{`CONCATENATE(
-  {Component},"-",
-  {Variant},"-",
-  {Type},"-",
-  {Element},"-",
-  {Property},"-",
-  {State}
-)`}
-            </pre>
-            <img 
-              src="https://framerusercontent.com/images/pyTZywrvpdVUJFB5qfxTLGM60.png" 
-              alt="Formula"
-              className="w-full rounded-lg"
-            />
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.15}>
-          <div className="mb-12">
-            <h3 className="text-xl font-medium mb-4">Component Field Links</h3>
-            <p className="text-muted-foreground mb-6">
-              Linked records connect tokens to their parent components, enabling dependency tracking.
-            </p>
-            <img 
-              src="https://framerusercontent.com/images/TMyFjlvD124m6yFfApgm7caw.png" 
-              alt="Component Field"
-              className="w-full rounded-lg"
-            />
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.2}>
-          <div className="mb-8">
-            <h3 className="text-xl font-medium mb-4">Primitive Field Links</h3>
-            <p className="text-muted-foreground mb-6">
-              Semantic tokens link back to primitive values, creating a traceable hierarchy.
-            </p>
-            <img 
-              src="https://framerusercontent.com/images/PmxUSBW5z2kthjQwoak0iLPyCOg.png" 
-              alt="Primitive Field"
-              className="w-full rounded-lg"
-            />
-          </div>
-        </ScrollReveal>
-      </section>
-
-      {/* Lessons & Next Steps */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <ScrollReveal>
-          <h2 className="text-2xl font-medium mb-8">Lessons & Next Steps</h2>
-        </ScrollReveal>
-        
-        <div className="grid md:grid-cols-2 gap-8">
-          <ScrollReveal delay={0.1}>
-            <div>
-              <h3 className="text-foreground font-medium mb-4">Key Takeaways</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• Naming conventions prevent chaos at scale</li>
-                <li>• Formulas reduce human error</li>
-                <li>• Linked tables enable powerful queries</li>
-                <li>• Documentation embedded in the system itself</li>
-              </ul>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal delay={0.15}>
-            <div>
-              <h3 className="text-foreground font-medium mb-4">What's Next</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• Automated sync to Figma variables</li>
-                <li>• Export scripts for CSS/JSON tokens</li>
-                <li>• Version history and rollback support</li>
-              </ul>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Navigation */}
-      <section className="max-w-4xl mx-auto px-6 py-12 border-t border-border">
-        <ScrollReveal>
-          <div className="flex justify-between items-center">
-            <Link 
-              to="/case-studies/component-docs" 
-              className="text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Previous: Component Docs
-            </Link>
-            <Link 
-              to="/case-studies" 
-              className="text-primary hover:underline inline-flex items-center gap-2"
-            >
-              All Case Studies
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </ScrollReveal>
-      </section>
     </div>
   );
 };

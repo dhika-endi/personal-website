@@ -560,3 +560,56 @@
     background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(14, 90%, 65%));
   }
 }
+
+/* ── Portfolio Design Variables ── */
+:root {
+  --bg-left:    #1c1916;
+  --ink-dark:   #f5f1ea;
+  --ink-dark2:  #9b9690;
+  --ink-dark3:  #4a4642;
+  --line-dark:  #2e2b27;
+
+  --bg-right:   #f5f1ea;
+  --ink:        #1c1916;
+  --ink-2:      #6e6a62;
+  --ink-3:      #b0aba3;
+  --line:       #e5e0d7;
+  --hover-bg:   #efede8;
+
+  --p-accent:   #c8622e;
+  --p-green:    #5a9e6f;
+}
+
+html, body, #root {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #f5f1ea;
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes statusPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(90,158,111,.4); }
+  50%       { box-shadow: 0 0 0 5px rgba(90,158,111,0); }
+}
+@keyframes barGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.scroll-panel::-webkit-scrollbar       { width: 3px; }
+.scroll-panel::-webkit-scrollbar-track { background: transparent; }
+.scroll-panel::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }

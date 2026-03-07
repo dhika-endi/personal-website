@@ -1,372 +1,398 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { ArrowUpRight } from "lucide-react";
+
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex items-center gap-4 mb-4">
+      <span className="font-mono text-[0.72rem] font-light text-[#b0aba3] tracking-[0.12em] uppercase whitespace-nowrap">
+        {children}
+      </span>
+      <div className="flex-1 h-px bg-[#e5e0d7]" />
+    </div>
+  );
+}
+
+function CaseImage({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
+  return (
+    <div className="mt-6">
+      <div className="border border-[#e5e0d7]">
+        <img src={src} alt={alt} className="w-full block" />
+      </div>
+      {caption && (
+        <p className="font-mono text-[0.58rem] text-[#b0aba3] mt-2 tracking-[0.04em]">{caption}</p>
+      )}
+    </div>
+  );
+}
 
 const DesignSystemCaseStudy = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Back Navigation */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-6 md:pt-8">
-        <Link 
-          to="/case-studies" 
-          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm md:text-base"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to Case Studies
-        </Link>
+    <div className="w-full max-w-[1100px] mx-auto pb-28 max-[860px]:pb-16">
+
+      {/* ── HEADER ── */}
+      <section
+        className="border-b border-[#c9c3b8]"
+        style={{ animation: "fadeUp .5s ease both" }}
+      >
+        {/* Back nav */}
+        <div className="px-12 pt-10 pb-0 max-[860px]:px-7">
+          <Link
+            to="/case-studies"
+            className="inline-flex items-center gap-1 font-mono text-[0.62rem] tracking-[0.06em] text-[#b0aba3] hover:text-[#1c1916] transition-colors no-underline uppercase"
+          >
+            ← Case Studies
+          </Link>
+        </div>
+
+        {/* Title block */}
+        <div className="px-12 pt-10 pb-14 max-[860px]:px-7 max-[860px]:pt-8 max-[860px]:pb-10">
+          <p className="font-mono text-[0.6rem] font-light text-[#b0aba3] tracking-[0.12em] uppercase mb-4">
+            001 · Design Systems
+          </p>
+          <h1 className="font-grotesk font-normal text-[3.2rem] leading-[1.04] tracking-[-0.025em] text-[#1c1916] max-w-[720px] max-[860px]:text-[2.2rem]">
+            An End-to-End<br />Design System.
+          </h1>
+        </div>
+
+        {/* Meta bar */}
+        <div className="grid grid-cols-4 border-t border-[#e5e0d7] max-[640px]:grid-cols-2">
+          {[
+            { label: "Year",     value: "2024" },
+            { label: "Role",     value: "Design System Lead" },
+            { label: "Company",  value: "IxDF" },
+            { label: "Stack",    value: "Figma · Airtable · Storybook" },
+          ].map((item, i) => (
+            <div
+              key={item.label}
+              className={`px-12 py-6 max-[860px]:px-7 ${i < 3 ? "border-r border-[#e5e0d7] max-[640px]:border-r-0" : ""} ${i === 1 ? "max-[640px]:border-r border-[#e5e0d7]" : ""} ${i < 2 ? "max-[640px]:border-b border-[#e5e0d7]" : ""}`}
+            >
+              <p className="font-mono text-[0.52rem] tracking-[0.1em] text-[#b0aba3] uppercase mb-1.5">{item.label}</p>
+              <p className="font-mono text-[0.72rem] text-[#1c1916]">{item.value}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── HERO IMAGE ── */}
+      <div className="border-b border-[#e5e0d7]" style={{ animation: "fadeUp .5s .08s ease both" }}>
+        <img
+          src="https://framerusercontent.com/images/lIy9bJPJ3Jlr2IQfLKQxUSgdKO4.png"
+          alt="Design System Hero"
+          className="w-full block"
+        />
       </div>
 
-      {/* Hero Section */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-16">
-        <ScrollReveal>
-          <div className="flex items-center gap-4 mb-4 md:mb-6">
-            <span className="text-muted-foreground font-mono text-sm">2025</span>
+      {/* ── OVERVIEW ── */}
+      <section
+        className="border-b border-[#c9c3b8]"
+        style={{ animation: "fadeUp .5s .12s ease both" }}
+      >
+        <div className="grid min-[860px]:grid-cols-[2fr_1fr]">
+          <div className="px-12 py-16 border-r border-[#e5e0d7] max-[860px]:border-r-0 max-[860px]:border-b max-[860px]:px-7 max-[860px]:py-12">
+            <SectionLabel>Overview</SectionLabel>
+            <p className="font-grotesk text-[1.15rem] leading-[1.8] text-[#6e6a62] max-w-[560px]">
+              A token-based design system built to scale across products, teams, and platforms. Using Figma variables as its backbone — with a clear layer of primitives, semantics, and component-level tokens — it enables consistent theming, responsive design, and efficient handoff between design and development.
+            </p>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-6 md:mb-8">
-            An End-to-End Design System.
-          </h1>
-        </ScrollReveal>
-        <ScrollReveal delay={0.1} variant="scale">
-          <img 
-            src="https://framerusercontent.com/images/lIy9bJPJ3Jlr2IQfLKQxUSgdKO4.png" 
-            alt="Design System Hero"
-            className="w-full rounded-lg"
-          />
-        </ScrollReveal>
-      </section>
-
-      {/* Introduction */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12">
-        <ScrollReveal>
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            A token-based design system built to scale across products, teams, and platforms. 
-            This system uses Figma variables as its backbone, with a clear layer of primitives, 
-            semantics, and component-level tokens. It enables consistent theming, responsive design, 
-            and efficient handoff between design and development.
-          </p>
-        </ScrollReveal>
-      </section>
-
-      {/* Problem Section */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12">
-        <ScrollReveal>
-          <h2 className="text-xl md:text-2xl font-medium mb-4 md:mb-6">Problem</h2>
-          <ul className="space-y-4 text-muted-foreground">
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span><strong className="text-foreground">Slow delivery:</strong> Designers and engineers repeatedly rebuilt the same components from scratch.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span><strong className="text-foreground">Inconsistent UI:</strong> Without shared foundations, visual language drifted between features.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span><strong className="text-foreground">Manual maintenance:</strong> Style updates required touching multiple files, risking errors.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span><strong className="text-foreground">Knowledge gaps:</strong> No single source of truth for usage guidelines, accessibility rules, or naming conventions.</span>
-            </li>
-          </ul>
-        </ScrollReveal>
-      </section>
-
-      {/* Solution Section */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <ScrollReveal>
-          <h2 className="text-2xl font-medium mb-6">Solution</h2>
-          <ul className="space-y-4 text-muted-foreground">
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span><strong className="text-foreground">Token foundation:</strong> Define primitives (raw values) and semantics (contextual meanings) to drive every UI decision.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span><strong className="text-foreground">Variable-driven responsiveness:</strong> Bind spacing, sizing, and typography to breakpoints so components adapt automatically.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span><strong className="text-foreground">Library split:</strong> Separate universal components (usable everywhere) from product-specific patterns (tailored workflows).</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span><strong className="text-foreground">Governance & docs:</strong> Centralize naming rules in Airtable and publish interactive documentation for every component.</span>
-            </li>
-          </ul>
-        </ScrollReveal>
-      </section>
-
-      {/* Challenges Section */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <ScrollReveal>
-          <h2 className="text-2xl font-medium mb-6">Challenges</h2>
-          <div className="space-y-6 text-muted-foreground">
-            <div>
-              <h3 className="text-foreground font-medium mb-2">Fragmented Token Usage</h3>
-              <p>Multiple teams had created ad-hoc color and spacing values. Consolidating them into a single primitive set required auditing every existing component and negotiating trade-offs.</p>
-            </div>
-            <div>
-              <h3 className="text-foreground font-medium mb-2">Responsive Component Overhead</h3>
-              <p>Binding tokens to breakpoints added complexity. We invested in clear documentation and helper utilities so designers and engineers could apply responsive tokens without guesswork.</p>
-            </div>
-            <div>
-              <h3 className="text-foreground font-medium mb-2">Limited Discoverability</h3>
-              <p>Early versions lacked search and examples. We iterated on the documentation site, adding live previews, anatomy diagrams, and do/don't guidance to make the system approachable.</p>
+          <div className="px-12 py-16 max-[860px]:px-7 max-[860px]:py-10">
+            <SectionLabel>Tags</SectionLabel>
+            <div className="flex flex-wrap gap-2">
+              {["Design Tokens", "Component Library", "Figma Variables", "Airtable", "Documentation", "Governance", "Accessibility"].map((tag) => (
+                <span key={tag} className="font-mono text-[0.58rem] tracking-[0.06em] text-[#b0aba3] border border-[#e5e0d7] px-2.5 py-1">
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
-        </ScrollReveal>
+        </div>
       </section>
 
-      {/* Foundation Section */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <ScrollReveal>
-          <h2 className="text-2xl font-medium mb-8">Foundation</h2>
-        </ScrollReveal>
-        
-        {/* Typography */}
-        <ScrollReveal delay={0.1}>
-          <div className="mb-12">
-            <h3 className="text-xl font-medium mb-4">Typography Scale</h3>
-            <p className="text-muted-foreground mb-6">
-              A modular type scale anchored to a base size, with responsive adjustments at each breakpoint. 
-              Semantic tokens like text-heading-lg or text-body-md map to specific font-size, line-height, 
-              and letter-spacing combinations.
-            </p>
-            <img 
-              src="https://framerusercontent.com/images/QLEfQYFwX9Zdc4oJzpvjJ8N2iKw.png" 
-              alt="Typography Scale"
-              className="w-full rounded-lg"
-            />
+      {/* ── PROBLEM + SOLUTION ── */}
+      <section
+        className="border-b border-[#c9c3b8]"
+        style={{ animation: "fadeUp .5s .16s ease both" }}
+      >
+        <div className="grid min-[640px]:grid-cols-2">
+          <div className="px-12 pt-16 pb-16 border-r border-[#e5e0d7] max-[640px]:border-r-0 max-[640px]:border-b max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-12">
+            <SectionLabel>Problem</SectionLabel>
+            <ul className="space-y-5 mt-2">
+              {[
+                { label: "Slow delivery",      text: "Designers and engineers repeatedly rebuilt the same components from scratch." },
+                { label: "Inconsistent UI",    text: "Without shared foundations, visual language drifted between features and teams." },
+                { label: "Manual maintenance", text: "Style updates required touching multiple files, risking errors and regressions." },
+                { label: "Knowledge gaps",     text: "No single source of truth for usage guidelines, accessibility rules, or naming conventions." },
+              ].map((item) => (
+                <li key={item.label} className="flex gap-3">
+                  <span className="font-mono text-[0.6rem] text-[#c8622e] mt-1 flex-shrink-0">—</span>
+                  <span className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed">
+                    <span className="text-[#1c1916]">{item.label}: </span>{item.text}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
-        </ScrollReveal>
 
-        {/* Color */}
-        <ScrollReveal delay={0.15}>
-          <div className="mb-12">
-            <h3 className="text-xl font-medium mb-4">Color Scale</h3>
-            <p className="text-muted-foreground mb-6">
-              Primitives define raw hues and shades (e.g., blue-500). Semantic tokens assign meaning 
-              (e.g., color-action-primary). This two-layer approach makes global theme changes trivial 
-              and ensures accessible contrast ratios.
-            </p>
-            <img 
-              src="https://framerusercontent.com/images/hSSXNzQOOPQzKsY8ppEyvxXKLew.png" 
-              alt="Color Scale"
-              className="w-full rounded-lg"
-            />
+          <div className="px-12 pt-16 pb-16 max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-12">
+            <SectionLabel>Solution</SectionLabel>
+            <ul className="space-y-5 mt-2">
+              {[
+                { label: "Token foundation",              text: "Define primitives (raw values) and semantics (contextual meanings) to drive every UI decision." },
+                { label: "Variable-driven responsiveness", text: "Bind spacing, sizing, and typography to breakpoints so components adapt automatically." },
+                { label: "Library split",                 text: "Separate universal components from product-specific patterns for tailored workflows." },
+                { label: "Governance & docs",             text: "Centralize naming rules in Airtable and publish interactive documentation for every component." },
+              ].map((item) => (
+                <li key={item.label} className="flex gap-3">
+                  <span className="font-mono text-[0.6rem] text-[#c8622e] mt-1 flex-shrink-0">—</span>
+                  <span className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed">
+                    <span className="text-[#1c1916]">{item.label}: </span>{item.text}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
-        </ScrollReveal>
-
-        {/* Spacing */}
-        <ScrollReveal delay={0.2}>
-          <div className="mb-12">
-            <h3 className="text-xl font-medium mb-4">Spacing & Sizing</h3>
-            <p className="text-muted-foreground mb-6">
-              An 8-px base grid drives all spacing and sizing tokens. Responsive variants (e.g., space-md 
-              = 16 px on mobile, 24 px on desktop) ensure layouts stay proportional across devices.
-            </p>
-            <img 
-              src="https://framerusercontent.com/images/8Mj7VoBOpD14rfkejIoksrlBQ.png" 
-              alt="Spacing & Sizing"
-              className="w-full rounded-lg"
-            />
-          </div>
-        </ScrollReveal>
-
-        {/* Border, Shadow, Opacity */}
-        <ScrollReveal delay={0.25}>
-          <div className="mb-12">
-            <h3 className="text-xl font-medium mb-4">Border Radius, Shadow, & Opacity</h3>
-            <p className="text-muted-foreground mb-6">
-              Tokens for corner rounding (radius-sm, radius-lg), elevation (shadow-100, shadow-200), 
-              and transparency (opacity-disabled) keep visual effects consistent and easy to update.
-            </p>
-            <img 
-              src="https://framerusercontent.com/images/DN78wO4eb7Dus84nLDv9TsCO7c.png" 
-              alt="Border Radius, Shadow, & Opacity"
-              className="w-full rounded-lg"
-            />
-          </div>
-        </ScrollReveal>
-
-        {/* Breakpoints */}
-        <ScrollReveal delay={0.3}>
-          <div className="mb-12">
-            <h3 className="text-xl font-medium mb-4">Breakpoints</h3>
-            <p className="text-muted-foreground mb-6">
-              Four breakpoints—desktop, laptop, tablet, mobile—control responsive token values. 
-              Components reference these breakpoints to switch spacing, sizing, and typography automatically.
-            </p>
-            <img 
-              src="https://framerusercontent.com/images/kcXIOn3ZDlwagvkO4pvGOxtW8g.png" 
-              alt="Breakpoints"
-              className="w-full rounded-lg"
-            />
-          </div>
-        </ScrollReveal>
+        </div>
       </section>
 
-      {/* Components & Patterns */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <ScrollReveal>
-          <h2 className="text-2xl font-medium mb-8">Components & Patterns</h2>
-          
-          <div className="mb-8">
-            <h3 className="text-xl font-medium mb-4">Universal Components</h3>
-            <p className="text-muted-foreground mb-4">
-              Buttons, Inputs, Checkboxes, Radios, Selects, Toggles, and other primitives shared across all products.
+      {/* ── CHALLENGES ── */}
+      <section
+        className="px-12 pt-16 pb-16 border-b border-[#c9c3b8] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-12"
+        style={{ animation: "fadeUp .5s .2s ease both" }}
+      >
+        <SectionLabel>Challenges</SectionLabel>
+        <div className="grid min-[640px]:grid-cols-3 gap-10 mt-4">
+          {[
+            {
+              number: "01",
+              title: "Fragmented Token Usage",
+              text: "Multiple teams had created ad-hoc color and spacing values. Consolidating them into a single primitive set required auditing every existing component and negotiating trade-offs.",
+            },
+            {
+              number: "02",
+              title: "Responsive Overhead",
+              text: "Binding tokens to breakpoints added complexity. We invested in clear documentation and helper utilities so designers and engineers could apply responsive tokens without guesswork.",
+            },
+            {
+              number: "03",
+              title: "Limited Discoverability",
+              text: "Early versions lacked search and examples. We iterated on the docs site, adding live previews, anatomy diagrams, and do/don't guidance to make the system approachable.",
+            },
+          ].map((c) => (
+            <div key={c.number}>
+              <span className="font-mono text-[0.52rem] text-[#c8622e] tracking-[0.1em] block mb-3">{c.number}</span>
+              <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-2 leading-snug">{c.title}</h3>
+              <p className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed">{c.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── FOUNDATION ── */}
+      <section
+        className="border-b border-[#c9c3b8]"
+        style={{ animation: "fadeUp .5s .22s ease both" }}
+      >
+        <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
+          <SectionLabel>Foundation</SectionLabel>
+        </div>
+
+        {[
+          {
+            title: "Typography Scale",
+            text: "A modular type scale anchored to a base size, with responsive adjustments at each breakpoint. Semantic tokens like text-heading-lg or text-body-md map to specific font-size, line-height, and letter-spacing combinations.",
+            image: "https://framerusercontent.com/images/QLEfQYFwX9Zdc4oJzpvjJ8N2iKw.png",
+            alt: "Typography Scale",
+          },
+          {
+            title: "Color Scale",
+            text: "Primitives define raw hues and shades (e.g., blue-500). Semantic tokens assign meaning (e.g., color-action-primary). This two-layer approach makes global theme changes trivial and ensures accessible contrast ratios.",
+            image: "https://framerusercontent.com/images/hSSXNzQOOPQzKsY8ppEyvxXKLew.png",
+            alt: "Color Scale",
+          },
+          {
+            title: "Spacing & Sizing",
+            text: "An 8-px base grid drives all spacing and sizing tokens. Responsive variants (e.g., space-md = 16 px on mobile, 24 px on desktop) ensure layouts stay proportional across devices.",
+            image: "https://framerusercontent.com/images/8Mj7VoBOpD14rfkejIoksrlBQ.png",
+            alt: "Spacing & Sizing",
+          },
+          {
+            title: "Border Radius, Shadow & Opacity",
+            text: "Tokens for corner rounding (radius-sm, radius-lg), elevation (shadow-100, shadow-200), and transparency (opacity-disabled) keep visual effects consistent and easy to update.",
+            image: "https://framerusercontent.com/images/DN78wO4eb7Dus84nLDv9TsCO7c.png",
+            alt: "Border Radius, Shadow & Opacity",
+          },
+          {
+            title: "Breakpoints",
+            text: "Four breakpoints — desktop, laptop, tablet, mobile — control responsive token values. Components reference these breakpoints to switch spacing, sizing, and typography automatically.",
+            image: "https://framerusercontent.com/images/kcXIOn3ZDlwagvkO4pvGOxtW8g.png",
+            alt: "Breakpoints",
+          },
+        ].map((item, i, arr) => (
+          <div
+            key={item.title}
+            className={`px-12 pt-10 pb-14 max-[860px]:px-7 max-[860px]:pb-10 ${i < arr.length - 1 ? "border-b border-[#e5e0d7]" : ""}`}
+          >
+            <h3 className="font-grotesk font-normal text-[1.1rem] text-[#1c1916] mb-3">{item.title}</h3>
+            <p className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">{item.text}</p>
+            <CaseImage src={item.image} alt={item.alt} />
+          </div>
+        ))}
+      </section>
+
+      {/* ── COMPONENTS & PATTERNS ── */}
+      <section
+        className="border-b border-[#c9c3b8]"
+        style={{ animation: "fadeUp .5s .24s ease both" }}
+      >
+        <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
+          <SectionLabel>Components & Patterns</SectionLabel>
+        </div>
+        <div className="grid min-[640px]:grid-cols-2 border-t border-[#e5e0d7] mt-6">
+          <div className="px-12 py-10 border-r border-[#e5e0d7] max-[640px]:border-r-0 max-[640px]:border-b max-[860px]:px-7">
+            <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-2">Universal Components</h3>
+            <p className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed">
+              Buttons, Inputs, Checkboxes, Radios, Selects, Toggles, and other primitives shared across all products and platforms.
             </p>
           </div>
-
-          <div className="mb-8">
-            <h3 className="text-xl font-medium mb-4">Specific Component Library</h3>
-            <p className="text-muted-foreground mb-4">
+          <div className="px-12 py-10 max-[860px]:px-7">
+            <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-2">Specific Component Library</h3>
+            <p className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed">
               Product-specific patterns like data tables, dashboards, and workflow wizards built on top of universal components.
             </p>
           </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.1} variant="scale">
-          <img 
-            src="https://framerusercontent.com/images/YUx8pixpMr27UZxw7uIE6ra6s.png" 
+        </div>
+        <div className="px-12 pb-14 max-[860px]:px-7">
+          <CaseImage
+            src="https://framerusercontent.com/images/YUx8pixpMr27UZxw7uIE6ra6s.png"
             alt="Universal Components"
-            className="w-full rounded-lg"
           />
-        </ScrollReveal>
+        </div>
       </section>
 
-      {/* Token Naming & Airtable */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <ScrollReveal>
-          <h2 className="text-2xl font-medium mb-6">Token Naming & Airtable Workflow</h2>
-          <ul className="space-y-4 text-muted-foreground mb-8">
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span>Single source of truth for every token name, value, and description.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span>Formula-driven naming ensures consistency (e.g., color-action-primary-default).</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span>Linked tables connect primitives to semantics to component-level tokens.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span>Export scripts sync Airtable data to Figma variables and code.</span>
-            </li>
+      {/* ── TOKEN NAMING & AIRTABLE ── */}
+      <section
+        className="border-b border-[#c9c3b8]"
+        style={{ animation: "fadeUp .5s .26s ease both" }}
+      >
+        <div className="px-12 pt-16 pb-10 max-[860px]:px-7 max-[860px]:pt-12">
+          <SectionLabel>Token Naming & Airtable</SectionLabel>
+          <ul className="space-y-4 mt-2">
+            {[
+              "Single source of truth for every token name, value, and description.",
+              "Formula-driven naming ensures consistency (e.g., color-action-primary-default).",
+              "Linked tables connect primitives to semantics to component-level tokens.",
+              "Export scripts sync Airtable data to Figma variables and code.",
+            ].map((item) => (
+              <li key={item} className="flex gap-3">
+                <span className="font-mono text-[0.6rem] text-[#c8622e] mt-1 flex-shrink-0">—</span>
+                <span className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed">{item}</span>
+              </li>
+            ))}
           </ul>
-          <Link 
-            to="/case-studies/token-airtable" 
-            className="text-primary hover:underline inline-flex items-center gap-2 mb-8"
+          <Link
+            to="/case-studies/token-airtable"
+            className="inline-flex items-center gap-1.5 font-mono text-[0.68rem] text-[#c8622e] hover:underline no-underline mt-8 mb-2"
           >
             See the Airtable Token Dictionary case study
-            <ArrowRight className="w-4 h-4" />
+            <ArrowUpRight className="w-3 h-3" />
           </Link>
-        </ScrollReveal>
-        <ScrollReveal delay={0.1} variant="scale">
-          <img 
-            src="https://framerusercontent.com/images/GYcFRpbILBEs6yCJ7CriU2hoXeE.png" 
+        </div>
+        <div className="px-12 pb-14 max-[860px]:px-7">
+          <CaseImage
+            src="https://framerusercontent.com/images/GYcFRpbILBEs6yCJ7CriU2hoXeE.png"
             alt="Airtable Workflow"
-            className="w-full rounded-lg"
           />
-        </ScrollReveal>
+        </div>
       </section>
 
-      {/* Documentation */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <ScrollReveal>
-          <h2 className="text-2xl font-medium mb-8">Documentation</h2>
-        </ScrollReveal>
-        
-        <ScrollReveal delay={0.1}>
-          <div className="mb-12">
-            <h3 className="text-xl font-medium mb-4">Overview & Variants</h3>
-            <p className="text-muted-foreground mb-6">
-              Each component page opens with a summary of its purpose, followed by live examples of every variant. 
-              Designers and engineers can copy code snippets directly.
-            </p>
-            <img 
-              src="https://framerusercontent.com/images/OTtvCY51lAvqTnWXdIv6O6fWy8g.png" 
-              alt="Overview & Variants"
-              className="w-full rounded-lg"
-            />
-          </div>
-        </ScrollReveal>
+      {/* ── DOCUMENTATION ── */}
+      <section
+        className="border-b border-[#c9c3b8]"
+        style={{ animation: "fadeUp .5s .28s ease both" }}
+      >
+        <div className="px-12 pt-16 pb-0 max-[860px]:px-7 max-[860px]:pt-12">
+          <SectionLabel>Documentation</SectionLabel>
+        </div>
 
-        <ScrollReveal delay={0.15}>
-          <div className="mb-8">
-            <h3 className="text-xl font-medium mb-4">Anatomy Breakdown</h3>
-            <p className="text-muted-foreground mb-6">
-              Numbered diagrams highlight each part of a component (icon, label, container) so teams understand 
-              how to customize or extend it safely.
-            </p>
-            <img 
-              src="https://framerusercontent.com/images/awNYpPjdzb3AQvzeZihcxPwVUc.png" 
-              alt="Anatomy Breakdown"
-              className="w-full rounded-lg"
-            />
-          </div>
-        </ScrollReveal>
+        <div className="px-12 pt-8 pb-12 border-b border-[#e5e0d7] max-[860px]:px-7">
+          <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-3">Overview & Variants</h3>
+          <p className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">
+            Each component page opens with a summary of its purpose, followed by live examples of every variant. Designers and engineers can copy code snippets directly.
+          </p>
+          <CaseImage
+            src="https://framerusercontent.com/images/OTtvCY51lAvqTnWXdIv6O6fWy8g.png"
+            alt="Overview & Variants"
+          />
+        </div>
 
-        <ScrollReveal delay={0.2}>
-          <Link 
-            to="/case-studies/component-docs" 
-            className="text-primary hover:underline inline-flex items-center gap-2"
+        <div className="px-12 pt-8 pb-12 max-[860px]:px-7">
+          <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-3">Anatomy Breakdown</h3>
+          <p className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">
+            Numbered diagrams highlight each part of a component (icon, label, container) so teams understand how to customize or extend it safely.
+          </p>
+          <CaseImage
+            src="https://framerusercontent.com/images/awNYpPjdzb3AQvzeZihcxPwVUc.png"
+            alt="Anatomy Breakdown"
+          />
+          <Link
+            to="/case-studies/component-docs"
+            className="inline-flex items-center gap-1.5 font-mono text-[0.68rem] text-[#c8622e] hover:underline no-underline mt-8"
           >
             See the Component Documentation case study
-            <ArrowRight className="w-4 h-4" />
+            <ArrowUpRight className="w-3 h-3" />
           </Link>
-        </ScrollReveal>
+        </div>
       </section>
 
-      {/* Impact & Results */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
-        <ScrollReveal>
-          <h2 className="text-2xl font-medium mb-6">Impact & Results</h2>
-          <ul className="space-y-4 text-muted-foreground">
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span><strong className="text-foreground">40% faster feature delivery</strong> by reusing existing components and tokens.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span><strong className="text-foreground">Zero visual drift</strong> across products after enforcing semantic tokens.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span><strong className="text-foreground">50% reduction in design QA cycles</strong> thanks to clear documentation and live previews.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-primary">•</span>
-              <span><strong className="text-foreground">Onboarding time halved</strong> for new team members with centralized guidelines.</span>
-            </li>
-          </ul>
-        </ScrollReveal>
+      {/* ── IMPACT & RESULTS ── */}
+      <section
+        className="border-b border-[#c9c3b8]"
+        style={{ animation: "fadeUp .5s .3s ease both" }}
+      >
+        <div className="px-12 pt-16 pb-6 max-[860px]:px-7 max-[860px]:pt-12">
+          <SectionLabel>Impact & Results</SectionLabel>
+        </div>
+
+        <div className="grid grid-cols-2 max-[480px]:grid-cols-1 border-t border-[#e5e0d7]">
+          {[
+            { metric: "40%",  label: "faster feature delivery by reusing existing components and tokens" },
+            { metric: "0",    label: "visual drift across products after enforcing semantic tokens" },
+            { metric: "50%",  label: "reduction in design QA cycles thanks to clear documentation" },
+            { metric: "½",    label: "onboarding time for new team members with centralized guidelines" },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className={`px-12 py-12 max-[860px]:px-7 max-[860px]:py-10 ${
+                i % 2 === 0 ? "border-r border-[#e5e0d7] max-[480px]:border-r-0" : ""
+              } ${i < 2 ? "border-b border-[#e5e0d7]" : ""}`}
+            >
+              <p className="font-grotesk font-normal text-[3.2rem] leading-none text-[#c8622e] mb-3">
+                {item.metric}
+              </p>
+              <p className="font-mono text-[0.7rem] font-light text-[#6e6a62] leading-relaxed max-w-[200px]">
+                {item.label}
+              </p>
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* Navigation */}
-      <section className="max-w-4xl mx-auto px-6 py-12 border-t border-border">
-        <ScrollReveal>
-          <div className="flex justify-between items-center">
-            <Link 
-              to="/case-studies" 
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              ← All Case Studies
-            </Link>
-            <Link 
-              to="/case-studies/component-docs" 
-              className="text-primary hover:underline inline-flex items-center gap-2"
-            >
-              Next: Component Docs
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </ScrollReveal>
-      </section>
+      {/* ── NAVIGATION ── */}
+      <div className="px-12 py-12 flex justify-between items-center max-[860px]:px-7 max-[860px]:py-10">
+        <Link
+          to="/case-studies"
+          className="font-mono text-[0.62rem] tracking-[0.06em] text-[#b0aba3] hover:text-[#1c1916] transition-colors no-underline uppercase"
+        >
+          ← All Case Studies
+        </Link>
+        <Link
+          to="/case-studies/component-docs"
+          className="inline-flex items-center gap-1.5 font-mono text-[0.62rem] tracking-[0.06em] text-[#1c1916] hover:text-[#c8622e] transition-colors no-underline uppercase"
+        >
+          Component Docs
+          <ArrowUpRight className="w-3 h-3" />
+        </Link>
+      </div>
+
     </div>
   );
 };
