@@ -74,7 +74,7 @@ const processSteps = [
     number: "001",
     category: "Product Audit",
     title: "Audit the Product",
-    description: "Map inconsistencies, UI debt, and team pain points. Claude Code helps surface patterns across large inventories—fast.",
+    description: "Map inconsistencies, UI debt, and team pain points. AI can help surface patterns across large inventories—fast.",
     deliverables: "UI inventory, issue list, priority map.",
   },
   {
@@ -88,14 +88,14 @@ const processSteps = [
     number: "003",
     category: "Core Components",
     title: "Build the Component Library",
-    description: "Translate the visual language into scalable components. Claude Code accelerates variant scaffolding and accessibility annotations.",
+    description: "Translate the visual language into scalable components. AI can accelerate variant scaffolding—one example is using Claude Code directly inside Figma to generate annotations.",
     deliverables: "component set, variants, usage rules, accessibility notes.",
   },
   {
     number: "004",
     category: "Documentation",
     title: "Rollout, Educate, and Evolve",
-    description: "Launch the system into real workflows. AI drafts documentation from component specs—cutting time-to-publish significantly.",
+    description: "Launch the system into real workflows. AI can draft documentation from component specs—cutting time-to-publish significantly.",
     deliverables: "documentation, onboarding materials, migration plan.",
   },
 ];
