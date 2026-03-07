@@ -99,7 +99,6 @@ const PortfolioCaseStudies = () => {
                 </div>
                 <div className="flex-shrink-0 text-right">
                   <span className="font-mono text-[0.58rem] text-[#b0aba3] block">{study.year}</span>
-                  <span className="font-mono text-[0.58rem] text-[#b0aba3] block mt-0.5">{study.role}</span>
                 </div>
               </div>
 
