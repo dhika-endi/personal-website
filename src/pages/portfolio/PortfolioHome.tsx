@@ -155,7 +155,7 @@ const PortfolioHome = () => {
               </button>
             </a>
           </div>
-          <div className="flex items-center justify-center py-10 min-w-0 max-[860px]:py-6">
+          <div className="flex items-center justify-center py-10 min-w-0 max-[860px]:py-6 max-[640px]:hidden">
             <DNAHelix />
           </div>
         </div>

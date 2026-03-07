@@ -69,7 +69,7 @@ const PortfolioLayout = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <div className="min-h-screen bg-[#f5f1ea]">
+    <div className="min-h-screen bg-[#f5f1ea] overflow-x-hidden">
 
       {/* ── NAVBAR ── */}
       <header
