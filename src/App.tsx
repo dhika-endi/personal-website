@@ -12,6 +12,7 @@ import PortfolioCaseStudies from "./pages/portfolio/PortfolioCaseStudies";
 import DesignSystemCaseStudy from "./pages/portfolio/case-studies/DesignSystemCaseStudy";
 import ComponentDocsCaseStudy from "./pages/portfolio/case-studies/ComponentDocsCaseStudy";
 import TokenAirtableCaseStudy from "./pages/portfolio/case-studies/TokenAirtableCaseStudy";
+import PortfolioPlayground from "./pages/portfolio/PortfolioPlayground";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const App = () => (
               <Route path="case-studies/design-system" element={<DesignSystemCaseStudy />} />
               <Route path="case-studies/component-docs" element={<ComponentDocsCaseStudy />} />
               <Route path="case-studies/token-airtable" element={<TokenAirtableCaseStudy />} />
+              <Route path="playground" element={<PortfolioPlayground />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

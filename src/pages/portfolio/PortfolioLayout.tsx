@@ -6,6 +6,7 @@ import dhikaAvatar from "@/assets/dhika-avatar.png";
 const navItems = [
   { label: "Home",         href: "/",              image: dhikaAvatar },
   { label: "Case Studies", href: "/case-studies",  image: "https://framerusercontent.com/images/wBhT6nI0uuP1WMsAQy26KTa6hQ.png?width=2678&height=1402" },
+  { label: "Playground",   href: "/playground",    image: dhikaAvatar },
   { label: "About",        href: "/about",         image: dhikaAvatar },
   { label: "Contact",      href: "/contact",       image: dhikaAvatar },
 ];
@@ -69,11 +70,11 @@ const PortfolioLayout = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <div className="min-h-screen bg-[#f5f1ea] overflow-x-hidden">
+    <div className="min-h-screen bg-[#fafafa] overflow-x-hidden">
 
       {/* ── NAVBAR ── */}
       <header
-        className="fixed top-0 left-0 right-0 z-50 bg-[#f5f1ea] border-b border-[#e5e0d7]"
+        className="fixed top-0 left-0 right-0 z-50 bg-[#fafafa] border-b border-[#e8e8e8]"
         style={{ animation: "slideInLeft .5s ease both" }}
       >
         <div className="max-w-[1440px] mx-auto flex items-center h-14 px-8 gap-6 max-[640px]:px-4 max-[640px]:gap-3">
@@ -97,7 +98,7 @@ const PortfolioLayout = () => {
           </Link>
 
           {/* Divider */}
-          <div className="w-px h-4 bg-[#e5e0d7] flex-shrink-0" />
+          <div className="w-px h-4 bg-[#e8e8e8] flex-shrink-0" />
 
           {/* Internal nav */}
           <nav className="flex items-center gap-1 max-[640px]:hidden">
@@ -120,7 +121,7 @@ const PortfolioLayout = () => {
           </nav>
 
           {/* Divider */}
-          <div className="w-px h-4 bg-[#e5e0d7] flex-shrink-0 max-[640px]:hidden" />
+          <div className="w-px h-4 bg-[#e8e8e8] flex-shrink-0 max-[640px]:hidden" />
 
           {/* External links */}
           <div className="flex items-center gap-1 max-[640px]:hidden">
@@ -155,7 +156,7 @@ const PortfolioLayout = () => {
                 {social.icon}
               </a>
             ))}
-            <div className="w-px h-4 bg-[#e5e0d7] mx-1 max-[640px]:hidden" />
+            <div className="w-px h-4 bg-[#e8e8e8] mx-1 max-[640px]:hidden" />
             <div className="w-1.5 h-1.5 rounded-full bg-[#5a9e6f] flex-shrink-0 max-[640px]:hidden"
               style={{ animation: "statusPulse 2.5s ease-in-out infinite" }}
             />
@@ -189,12 +190,12 @@ const PortfolioLayout = () => {
 
         {/* Panel */}
         <div
-          className={`absolute left-0 top-0 h-full w-[260px] bg-[#f5f1ea] border-r border-[#e5e0d7] flex flex-col transition-transform duration-300 ease-out ${
+          className={`absolute left-0 top-0 h-full w-[260px] bg-[#fafafa] border-r border-[#e8e8e8] flex flex-col transition-transform duration-300 ease-out ${
             mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
           {/* Header */}
-          <div className="flex items-center justify-between h-14 px-5 border-b border-[#e5e0d7] shrink-0">
+          <div className="flex items-center justify-between h-14 px-5 border-b border-[#e8e8e8] shrink-0">
             <span className="font-grotesk text-[0.85rem] text-[#1c1916]">Menu</span>
             <button
               onClick={() => setMobileMenuOpen(false)}
@@ -217,8 +218,8 @@ const PortfolioLayout = () => {
                   to={item.href}
                   className={`font-mono text-[0.78rem] tracking-[0.03em] px-4 py-3 rounded transition-colors no-underline ${
                     isActive
-                      ? "text-[#1c1916] bg-[#ece8e0]"
-                      : "text-[#6e6a62] hover:text-[#1c1916] hover:bg-[#ece8e0]"
+                      ? "text-[#1c1916] bg-[#f0f0f0]"
+                      : "text-[#6e6a62] hover:text-[#1c1916] hover:bg-[#f0f0f0]"
                   }`}
                 >
                   {item.label}
@@ -226,7 +227,7 @@ const PortfolioLayout = () => {
               );
             })}
 
-            <div className="h-px bg-[#e5e0d7] my-1" />
+            <div className="h-px bg-[#e8e8e8] my-1" />
 
             {externalNavItems.map((item) => (
               <a
@@ -234,14 +235,14 @@ const PortfolioLayout = () => {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 font-mono text-[0.78rem] tracking-[0.03em] px-4 py-3 rounded text-[#6e6a62] hover:text-[#1c1916] hover:bg-[#ece8e0] transition-colors no-underline"
+                className="flex items-center gap-2 font-mono text-[0.78rem] tracking-[0.03em] px-4 py-3 rounded text-[#6e6a62] hover:text-[#1c1916] hover:bg-[#f0f0f0] transition-colors no-underline"
               >
                 {item.label}
                 <ExternalLink className="w-2.5 h-2.5" />
               </a>
             ))}
 
-            <div className="h-px bg-[#e5e0d7] my-1" />
+            <div className="h-px bg-[#e8e8e8] my-1" />
 
             <div className="flex items-center gap-2 px-4 py-3">
               <div className="w-1.5 h-1.5 rounded-full bg-[#5a9e6f] flex-shrink-0"

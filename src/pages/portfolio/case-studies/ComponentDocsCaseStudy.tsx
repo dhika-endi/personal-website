@@ -7,14 +7,14 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
       <span className="font-mono text-[0.72rem] font-light text-[#b0aba3] tracking-[0.12em] uppercase whitespace-nowrap">
         {children}
       </span>
-      <div className="flex-1 h-px bg-[#e5e0d7]" />
+      <div className="flex-1 h-px bg-[#e8e8e8]" />
     </div>
   );
 }
 
 function CaseImage({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="mt-6 border border-[#e5e0d7]">
+    <div className="mt-6 border border-[#e8e8e8]">
       <img src={src} alt={alt} className="w-full block" />
     </div>
   );
@@ -26,7 +26,7 @@ const ComponentDocsCaseStudy = () => {
 
       {/* ── BACK NAV + TITLE ── */}
       <section
-        className="px-12 pt-12 pb-16 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-10"
+        className="px-12 pt-12 pb-16 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pt-10"
         style={{ animation: "fadeUp .5s ease both" }}
       >
         <Link
@@ -45,7 +45,7 @@ const ComponentDocsCaseStudy = () => {
       </section>
 
       {/* ── HERO IMAGE ── */}
-      <div className="border-b border-[#e5e0d7]" style={{ animation: "fadeUp .5s .1s ease both" }}>
+      <div className="border-b border-[#e8e8e8]" style={{ animation: "fadeUp .5s .1s ease both" }}>
         <img
           src="https://framerusercontent.com/images/X7hb9IXO4Js8k9twWCKn5eWYzw.png"
           alt="Component Documentation Hero"
@@ -55,7 +55,7 @@ const ComponentDocsCaseStudy = () => {
 
       {/* ── INTRODUCTION ── */}
       <section
-        className="px-12 pt-16 pb-20 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        className="px-12 pt-16 pb-20 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
         style={{ animation: "fadeUp .5s .15s ease both" }}
       >
         <p className="font-grotesk text-[1.15rem] leading-[1.8] text-[#6e6a62] max-w-[680px]">
@@ -65,7 +65,7 @@ const ComponentDocsCaseStudy = () => {
 
       {/* ── WHO BENEFITS ── */}
       <section
-        className="px-12 pt-16 pb-20 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        className="px-12 pt-16 pb-20 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
         style={{ animation: "fadeUp .5s .2s ease both" }}
       >
         <SectionLabel>Who Benefits?</SectionLabel>
@@ -102,7 +102,7 @@ const ComponentDocsCaseStudy = () => {
 
       {/* ── DOCUMENTATION STRUCTURE ── */}
       <section
-        className="px-12 pt-16 pb-20 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        className="px-12 pt-16 pb-20 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
         style={{ animation: "fadeUp .5s .22s ease both" }}
       >
         <SectionLabel>Documentation Structure</SectionLabel>
@@ -127,7 +127,7 @@ const ComponentDocsCaseStudy = () => {
 
       {/* ── ANATOMY ── */}
       <section
-        className="px-12 pt-16 pb-20 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        className="px-12 pt-16 pb-20 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
         style={{ animation: "fadeUp .5s .24s ease both" }}
       >
         <SectionLabel>Anatomy</SectionLabel>
@@ -150,7 +150,7 @@ const ComponentDocsCaseStudy = () => {
 
       {/* ── VARIANTS ── */}
       <section
-        className="border-b border-[#e5e0d7]"
+        className="border-b border-[#e8e8e8]"
         style={{ animation: "fadeUp .5s .26s ease both" }}
       >
         <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
@@ -173,7 +173,7 @@ const ComponentDocsCaseStudy = () => {
         ].map((item, i, arr) => (
           <div
             key={item.title}
-            className={`px-12 pb-14 max-[860px]:px-7 max-[860px]:pb-10 ${i < arr.length - 1 ? "border-b border-[#e5e0d7]" : "pb-20 max-[860px]:pb-14"}`}
+            className={`px-12 pb-14 max-[860px]:px-7 max-[860px]:pb-10 ${i < arr.length - 1 ? "border-b border-[#e8e8e8]" : "pb-20 max-[860px]:pb-14"}`}
           >
             <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">{item.title}</h3>
             <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">{item.text}</p>
@@ -184,7 +184,7 @@ const ComponentDocsCaseStudy = () => {
 
       {/* ── STATES ── */}
       <section
-        className="px-12 pt-16 pb-20 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        className="px-12 pt-16 pb-20 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
         style={{ animation: "fadeUp .5s .28s ease both" }}
       >
         <SectionLabel>States</SectionLabel>
@@ -212,7 +212,7 @@ const ComponentDocsCaseStudy = () => {
 
       {/* ── BEHAVIOR ── */}
       <section
-        className="border-b border-[#e5e0d7]"
+        className="border-b border-[#e8e8e8]"
         style={{ animation: "fadeUp .5s .3s ease both" }}
       >
         <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
@@ -235,7 +235,7 @@ const ComponentDocsCaseStudy = () => {
         ].map((item, i, arr) => (
           <div
             key={item.title}
-            className={`px-12 pb-14 max-[860px]:px-7 max-[860px]:pb-10 ${i < arr.length - 1 ? "border-b border-[#e5e0d7]" : "pb-20 max-[860px]:pb-14"}`}
+            className={`px-12 pb-14 max-[860px]:px-7 max-[860px]:pb-10 ${i < arr.length - 1 ? "border-b border-[#e8e8e8]" : "pb-20 max-[860px]:pb-14"}`}
           >
             <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">{item.title}</h3>
             <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">{item.text}</p>
@@ -246,7 +246,7 @@ const ComponentDocsCaseStudy = () => {
 
       {/* ── BEST PRACTICES ── */}
       <section
-        className="px-12 pt-16 pb-20 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        className="px-12 pt-16 pb-20 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
         style={{ animation: "fadeUp .5s .32s ease both" }}
       >
         <SectionLabel>Best Practices</SectionLabel>
@@ -261,7 +261,7 @@ const ComponentDocsCaseStudy = () => {
 
       {/* ── DO AND DON'T ── */}
       <section
-        className="border-b border-[#e5e0d7]"
+        className="border-b border-[#e8e8e8]"
         style={{ animation: "fadeUp .5s .34s ease both" }}
       >
         <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
@@ -276,7 +276,7 @@ const ComponentDocsCaseStudy = () => {
         ].map((item, i, arr) => (
           <div
             key={item.title}
-            className={`px-12 pb-14 max-[860px]:px-7 max-[860px]:pb-10 ${i < arr.length - 1 ? "border-b border-[#e5e0d7]" : "pb-20 max-[860px]:pb-14"}`}
+            className={`px-12 pb-14 max-[860px]:px-7 max-[860px]:pb-10 ${i < arr.length - 1 ? "border-b border-[#e8e8e8]" : "pb-20 max-[860px]:pb-14"}`}
           >
             <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">{item.title}</h3>
             <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">{item.text}</p>
@@ -287,7 +287,7 @@ const ComponentDocsCaseStudy = () => {
 
       {/* ── RESPONSIVE ── */}
       <section
-        className="px-12 pt-16 pb-20 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        className="px-12 pt-16 pb-20 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
         style={{ animation: "fadeUp .5s .36s ease both" }}
       >
         <SectionLabel>Responsive Guidelines</SectionLabel>
@@ -313,7 +313,7 @@ const ComponentDocsCaseStudy = () => {
 
       {/* ── CHANGELOG ── */}
       <section
-        className="px-12 pt-16 pb-20 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        className="px-12 pt-16 pb-20 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
         style={{ animation: "fadeUp .5s .38s ease both" }}
       >
         <SectionLabel>Changelog</SectionLabel>

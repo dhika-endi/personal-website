@@ -161,7 +161,7 @@ const DNAHelix = () => {
       const r = isHover ? 6 : 4.5;
       ctx.beginPath();
       ctx.arc(nx, ny, r, 0, Math.PI * 2);
-      ctx.fillStyle   = isOrange ? "#c8622e" : "#f5f1ea";
+      ctx.fillStyle   = isOrange ? "#c8622e" : "#fafafa";
       ctx.strokeStyle = isOrange ? "#c8622e" : "#1c1916";
       ctx.lineWidth   = isHover ? 2 : 1.5;
       ctx.fill();

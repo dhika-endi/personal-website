@@ -106,7 +106,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
       <span className="font-mono text-[0.72rem] font-light text-[#b0aba3] tracking-[0.12em] uppercase whitespace-nowrap">
         {children}
       </span>
-      <div className="flex-1 h-px bg-[#e5e0d7]" />
+      <div className="flex-1 h-px bg-[#e8e8e8]" />
     </div>
   );
 }
@@ -117,11 +117,11 @@ const PortfolioAbout = () => {
 
       {/* ── HERO ── */}
       <section
-        className="border-b border-[#e5e0d7]"
+        className="border-b border-[#e8e8e8]"
         style={{ animation: "fadeUp .5s ease both" }}
       >
         <div className="grid min-[860px]:grid-cols-[3fr_2fr] max-[860px]:grid-cols-1">
-          <div className="px-12 pt-16 pb-20 border-r border-[#e5e0d7] max-[860px]:border-r-0 max-[860px]:border-b max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14">
+          <div className="px-12 pt-16 pb-20 border-r border-[#e8e8e8] max-[860px]:border-r-0 max-[860px]:border-b max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14">
             <SectionLabel>About</SectionLabel>
             <h1 className="font-grotesk font-normal text-[3rem] leading-[1.05] tracking-[-0.025em] text-[#1c1916] mb-8 max-[860px]:text-[2.2rem]">
               Who am I.
@@ -145,7 +145,7 @@ const PortfolioAbout = () => {
 
       {/* ── EXPERIENCE ── */}
       <section
-        className="px-12 pt-16 pb-0 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-12"
+        className="px-12 pt-16 pb-0 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pt-12"
         style={{ animation: "fadeUp .5s .1s ease both" }}
       >
         <SectionLabel>Experience</SectionLabel>
@@ -157,7 +157,7 @@ const PortfolioAbout = () => {
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="grid min-[640px]:grid-cols-[1fr_auto] gap-4 py-8 border-t border-[#e5e0d7] last:border-b"
+              className="grid min-[640px]:grid-cols-[1fr_auto] gap-4 py-8 border-t border-[#e8e8e8] last:border-b"
             >
               <div>
                 <div className="flex items-center gap-3 mb-1 flex-wrap">
@@ -192,7 +192,7 @@ const PortfolioAbout = () => {
                 <span className="font-mono text-[0.62rem] text-[#b0aba3] whitespace-nowrap">
                   {exp.period}
                 </span>
-                <span className="font-mono text-[0.52rem] tracking-[0.06em] text-[#b0aba3] border border-[#e5e0d7] px-2 py-0.5 uppercase">
+                <span className="font-mono text-[0.52rem] tracking-[0.06em] text-[#b0aba3] border border-[#e8e8e8] px-2 py-0.5 uppercase">
                   {exp.workType}
                 </span>
               </div>
@@ -203,7 +203,7 @@ const PortfolioAbout = () => {
 
       {/* ── PROCESS ── */}
       <section
-        className="border-b border-[#e5e0d7]"
+        className="border-b border-[#e8e8e8]"
         style={{ animation: "fadeUp .5s .2s ease both" }}
       >
         <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
@@ -216,19 +216,19 @@ const PortfolioAbout = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-4 border-t border-[#e5e0d7] max-[640px]:grid-cols-2 max-[400px]:grid-cols-1">
+        <div className="grid grid-cols-4 border-t border-[#e8e8e8] max-[640px]:grid-cols-2 max-[400px]:grid-cols-1">
           {processSteps.map((step, i) => (
             <div
               key={step.number}
               className={`px-8 py-10 flex flex-col max-[860px]:px-6 max-[860px]:py-8 ${
-                i < 3 ? "border-r border-[#e5e0d7]" : ""
+                i < 3 ? "border-r border-[#e8e8e8]" : ""
               }`}
             >
               <div className="flex items-center gap-3 mb-6">
                 <span className="font-mono text-[0.55rem] text-[#c8622e] tracking-[0.08em]">
                   {step.number}
                 </span>
-                <div className="flex-1 h-px bg-[#e5e0d7]" />
+                <div className="flex-1 h-px bg-[#e8e8e8]" />
                 <div className="w-1.5 h-1.5 rounded-full bg-[#1c1916] flex-shrink-0" />
               </div>
               <span className="font-mono text-[0.5rem] text-[#b0aba3] tracking-[0.1em] uppercase mb-3">
@@ -240,7 +240,7 @@ const PortfolioAbout = () => {
               <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed mb-auto">
                 {step.description}
               </p>
-              <p className="font-mono text-[0.72rem] font-light text-[#b0aba3] mt-5 pt-4 border-t border-[#e5e0d7] leading-relaxed">
+              <p className="font-mono text-[0.72rem] font-light text-[#b0aba3] mt-5 pt-4 border-t border-[#e8e8e8] leading-relaxed">
                 <span className="text-[#9b9690]">↳ </span>{step.deliverables}
               </p>
             </div>

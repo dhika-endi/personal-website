@@ -7,7 +7,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
       <span className="font-mono text-[0.72rem] font-light text-[#b0aba3] tracking-[0.12em] uppercase whitespace-nowrap">
         {children}
       </span>
-      <div className="flex-1 h-px bg-[#e5e0d7]" />
+      <div className="flex-1 h-px bg-[#e8e8e8]" />
     </div>
   );
 }
@@ -15,7 +15,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 function CaseImage({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
   return (
     <div className="mt-6">
-      <div className="border border-[#e5e0d7]">
+      <div className="border border-[#e8e8e8]">
         <img src={src} alt={alt} className="w-full block" />
       </div>
       {caption && (
@@ -31,7 +31,7 @@ const DesignSystemCaseStudy = () => {
 
       {/* ── HEADER ── */}
       <section
-        className="border-b border-[#c9c3b8]"
+        className="border-b border-[#d4d4d4]"
         style={{ animation: "fadeUp .5s ease both" }}
       >
         {/* Back nav */}
@@ -55,7 +55,7 @@ const DesignSystemCaseStudy = () => {
         </div>
 
         {/* Meta bar */}
-        <div className="grid grid-cols-3 border-t border-[#e5e0d7] max-[640px]:grid-cols-2">
+        <div className="grid grid-cols-3 border-t border-[#e8e8e8] max-[640px]:grid-cols-2">
           {[
             { label: "Year",     value: "2024" },
             { label: "Company",  value: "IxDF" },
@@ -63,7 +63,7 @@ const DesignSystemCaseStudy = () => {
           ].map((item, i) => (
             <div
               key={item.label}
-              className={`px-12 py-6 max-[860px]:px-7 ${i < 2 ? "border-r border-[#e5e0d7]" : ""} ${i === 0 ? "max-[640px]:border-b border-[#e5e0d7]" : ""}`}
+              className={`px-12 py-6 max-[860px]:px-7 ${i < 2 ? "border-r border-[#e8e8e8]" : ""} ${i === 0 ? "max-[640px]:border-b border-[#e8e8e8]" : ""}`}
             >
               <p className="font-mono text-[0.52rem] tracking-[0.1em] text-[#b0aba3] uppercase mb-1.5">{item.label}</p>
               <p className="font-mono text-[0.72rem] text-[#1c1916]">{item.value}</p>
@@ -73,7 +73,7 @@ const DesignSystemCaseStudy = () => {
       </section>
 
       {/* ── HERO IMAGE ── */}
-      <div className="border-b border-[#e5e0d7]" style={{ animation: "fadeUp .5s .08s ease both" }}>
+      <div className="border-b border-[#e8e8e8]" style={{ animation: "fadeUp .5s .08s ease both" }}>
         <img
           src="https://framerusercontent.com/images/lIy9bJPJ3Jlr2IQfLKQxUSgdKO4.png"
           alt="Design System Hero"
@@ -83,11 +83,11 @@ const DesignSystemCaseStudy = () => {
 
       {/* ── OVERVIEW ── */}
       <section
-        className="border-b border-[#c9c3b8]"
+        className="border-b border-[#d4d4d4]"
         style={{ animation: "fadeUp .5s .12s ease both" }}
       >
         <div className="grid min-[860px]:grid-cols-[2fr_1fr]">
-          <div className="px-12 py-16 border-r border-[#e5e0d7] max-[860px]:border-r-0 max-[860px]:border-b max-[860px]:px-7 max-[860px]:py-12">
+          <div className="px-12 py-16 border-r border-[#e8e8e8] max-[860px]:border-r-0 max-[860px]:border-b max-[860px]:px-7 max-[860px]:py-12">
             <SectionLabel>Overview</SectionLabel>
             <p className="font-grotesk text-[1.15rem] leading-[1.8] text-[#6e6a62] max-w-[560px]">
               A token-based design system built to scale across products, teams, and platforms. Using Figma variables as its backbone — with a clear layer of primitives, semantics, and component-level tokens — it enables consistent theming, responsive design, and efficient handoff between design and development.
@@ -97,7 +97,7 @@ const DesignSystemCaseStudy = () => {
             <SectionLabel>Tags</SectionLabel>
             <div className="flex flex-wrap gap-2">
               {["Design Tokens", "Component Library", "Figma Variables", "Airtable", "Documentation", "Governance", "Accessibility"].map((tag) => (
-                <span key={tag} className="font-mono text-[0.58rem] tracking-[0.06em] text-[#b0aba3] border border-[#e5e0d7] px-2.5 py-1">
+                <span key={tag} className="font-mono text-[0.58rem] tracking-[0.06em] text-[#b0aba3] border border-[#e8e8e8] px-2.5 py-1">
                   {tag}
                 </span>
               ))}
@@ -108,11 +108,11 @@ const DesignSystemCaseStudy = () => {
 
       {/* ── PROBLEM + SOLUTION ── */}
       <section
-        className="border-b border-[#c9c3b8]"
+        className="border-b border-[#d4d4d4]"
         style={{ animation: "fadeUp .5s .16s ease both" }}
       >
         <div className="grid min-[640px]:grid-cols-2">
-          <div className="px-12 pt-16 pb-16 border-r border-[#e5e0d7] max-[640px]:border-r-0 max-[640px]:border-b max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-12">
+          <div className="px-12 pt-16 pb-16 border-r border-[#e8e8e8] max-[640px]:border-r-0 max-[640px]:border-b max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-12">
             <SectionLabel>Problem</SectionLabel>
             <ul className="space-y-5 mt-2">
               {[
@@ -154,7 +154,7 @@ const DesignSystemCaseStudy = () => {
 
       {/* ── CHALLENGES ── */}
       <section
-        className="px-12 pt-16 pb-16 border-b border-[#c9c3b8] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-12"
+        className="px-12 pt-16 pb-16 border-b border-[#d4d4d4] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-12"
         style={{ animation: "fadeUp .5s .2s ease both" }}
       >
         <SectionLabel>Challenges</SectionLabel>
@@ -187,7 +187,7 @@ const DesignSystemCaseStudy = () => {
 
       {/* ── FOUNDATION ── */}
       <section
-        className="border-b border-[#c9c3b8]"
+        className="border-b border-[#d4d4d4]"
         style={{ animation: "fadeUp .5s .22s ease both" }}
       >
         <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
@@ -228,7 +228,7 @@ const DesignSystemCaseStudy = () => {
         ].map((item, i, arr) => (
           <div
             key={item.title}
-            className={`px-12 pt-10 pb-14 max-[860px]:px-7 max-[860px]:pb-10 ${i < arr.length - 1 ? "border-b border-[#e5e0d7]" : ""}`}
+            className={`px-12 pt-10 pb-14 max-[860px]:px-7 max-[860px]:pb-10 ${i < arr.length - 1 ? "border-b border-[#e8e8e8]" : ""}`}
           >
             <h3 className="font-grotesk font-normal text-[1.1rem] text-[#1c1916] mb-3">{item.title}</h3>
             <p className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">{item.text}</p>
@@ -239,14 +239,14 @@ const DesignSystemCaseStudy = () => {
 
       {/* ── COMPONENTS & PATTERNS ── */}
       <section
-        className="border-b border-[#c9c3b8]"
+        className="border-b border-[#d4d4d4]"
         style={{ animation: "fadeUp .5s .24s ease both" }}
       >
         <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
           <SectionLabel>Components & Patterns</SectionLabel>
         </div>
-        <div className="grid min-[640px]:grid-cols-2 border-t border-[#e5e0d7] mt-6">
-          <div className="px-12 py-10 border-r border-[#e5e0d7] max-[640px]:border-r-0 max-[640px]:border-b max-[860px]:px-7">
+        <div className="grid min-[640px]:grid-cols-2 border-t border-[#e8e8e8] mt-6">
+          <div className="px-12 py-10 border-r border-[#e8e8e8] max-[640px]:border-r-0 max-[640px]:border-b max-[860px]:px-7">
             <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-2">Universal Components</h3>
             <p className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed">
               Buttons, Inputs, Checkboxes, Radios, Selects, Toggles, and other primitives shared across all products and platforms.
@@ -269,7 +269,7 @@ const DesignSystemCaseStudy = () => {
 
       {/* ── TOKEN NAMING & AIRTABLE ── */}
       <section
-        className="border-b border-[#c9c3b8]"
+        className="border-b border-[#d4d4d4]"
         style={{ animation: "fadeUp .5s .26s ease both" }}
       >
         <div className="px-12 pt-16 pb-10 max-[860px]:px-7 max-[860px]:pt-12">
@@ -305,14 +305,14 @@ const DesignSystemCaseStudy = () => {
 
       {/* ── DOCUMENTATION ── */}
       <section
-        className="border-b border-[#c9c3b8]"
+        className="border-b border-[#d4d4d4]"
         style={{ animation: "fadeUp .5s .28s ease both" }}
       >
         <div className="px-12 pt-16 pb-0 max-[860px]:px-7 max-[860px]:pt-12">
           <SectionLabel>Documentation</SectionLabel>
         </div>
 
-        <div className="px-12 pt-8 pb-12 border-b border-[#e5e0d7] max-[860px]:px-7">
+        <div className="px-12 pt-8 pb-12 border-b border-[#e8e8e8] max-[860px]:px-7">
           <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-3">Overview & Variants</h3>
           <p className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">
             Each component page opens with a summary of its purpose, followed by live examples of every variant. Designers and engineers can copy code snippets directly.
@@ -344,14 +344,14 @@ const DesignSystemCaseStudy = () => {
 
       {/* ── IMPACT & RESULTS ── */}
       <section
-        className="border-b border-[#c9c3b8]"
+        className="border-b border-[#d4d4d4]"
         style={{ animation: "fadeUp .5s .3s ease both" }}
       >
         <div className="px-12 pt-16 pb-6 max-[860px]:px-7 max-[860px]:pt-12">
           <SectionLabel>Impact & Results</SectionLabel>
         </div>
 
-        <div className="grid grid-cols-2 max-[480px]:grid-cols-1 border-t border-[#e5e0d7]">
+        <div className="grid grid-cols-2 max-[480px]:grid-cols-1 border-t border-[#e8e8e8]">
           {[
             { metric: "40%",  label: "faster feature delivery by reusing existing components and tokens" },
             { metric: "0",    label: "visual drift across products after enforcing semantic tokens" },
@@ -361,8 +361,8 @@ const DesignSystemCaseStudy = () => {
             <div
               key={i}
               className={`px-12 py-12 max-[860px]:px-7 max-[860px]:py-10 ${
-                i % 2 === 0 ? "border-r border-[#e5e0d7] max-[480px]:border-r-0" : ""
-              } ${i < 2 ? "border-b border-[#e5e0d7]" : ""}`}
+                i % 2 === 0 ? "border-r border-[#e8e8e8] max-[480px]:border-r-0" : ""
+              } ${i < 2 ? "border-b border-[#e8e8e8]" : ""}`}
             >
               <p className="font-grotesk font-normal text-[3.2rem] leading-none text-[#c8622e] mb-3">
                 {item.metric}

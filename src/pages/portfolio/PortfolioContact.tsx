@@ -7,7 +7,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
       <span className="font-mono text-[0.72rem] font-light text-[#b0aba3] tracking-[0.12em] uppercase whitespace-nowrap">
         {children}
       </span>
-      <div className="flex-1 h-px bg-[#e5e0d7]" />
+      <div className="flex-1 h-px bg-[#e8e8e8]" />
     </div>
   );
 }
@@ -29,7 +29,7 @@ const PortfolioContact = () => {
 
       {/* ── HERO ── */}
       <section
-        className="px-12 pt-16 pb-20 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        className="px-12 pt-16 pb-20 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
         style={{ animation: "fadeUp .5s ease both" }}
       >
         <SectionLabel>Contact</SectionLabel>
@@ -43,7 +43,7 @@ const PortfolioContact = () => {
 
       {/* ── FORM ── */}
       <section
-        className="px-12 pt-16 pb-20 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        className="px-12 pt-16 pb-20 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
         style={{ animation: "fadeUp .5s .1s ease both" }}
       >
         <form onSubmit={handleSubmit} className="max-w-[560px]">
@@ -63,7 +63,7 @@ const PortfolioContact = () => {
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               placeholder="Dhika Endi Astowo"
-              className="w-full bg-transparent border-0 border-b border-[#e5e0d7] pb-3 font-grotesk text-[1rem] text-[#1c1916] placeholder:text-[#d5cfc7] outline-none focus:border-[#1c1916] transition-colors"
+              className="w-full bg-transparent border-0 border-b border-[#e8e8e8] pb-3 font-grotesk text-[1rem] text-[#1c1916] placeholder:text-[#d5cfc7] outline-none focus:border-[#1c1916] transition-colors"
             />
           </div>
 
@@ -82,7 +82,7 @@ const PortfolioContact = () => {
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               placeholder="hello@example.com"
-              className="w-full bg-transparent border-0 border-b border-[#e5e0d7] pb-3 font-grotesk text-[1rem] text-[#1c1916] placeholder:text-[#d5cfc7] outline-none focus:border-[#1c1916] transition-colors"
+              className="w-full bg-transparent border-0 border-b border-[#e8e8e8] pb-3 font-grotesk text-[1rem] text-[#1c1916] placeholder:text-[#d5cfc7] outline-none focus:border-[#1c1916] transition-colors"
             />
           </div>
 
@@ -100,7 +100,7 @@ const PortfolioContact = () => {
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               placeholder="Tell me about your project..."
-              className="w-full bg-transparent border-0 border-b border-[#e5e0d7] pb-3 font-grotesk text-[1rem] text-[#1c1916] placeholder:text-[#d5cfc7] outline-none focus:border-[#1c1916] transition-colors resize-none"
+              className="w-full bg-transparent border-0 border-b border-[#e8e8e8] pb-3 font-grotesk text-[1rem] text-[#1c1916] placeholder:text-[#d5cfc7] outline-none focus:border-[#1c1916] transition-colors resize-none"
             />
           </div>
 

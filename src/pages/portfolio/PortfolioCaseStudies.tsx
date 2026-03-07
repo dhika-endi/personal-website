@@ -40,7 +40,7 @@ const PortfolioCaseStudies = () => {
 
       {/* ── HEADER ── */}
       <section
-        className="px-12 pt-16 pb-14 border-b border-[#c9c3b8] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-10"
+        className="px-12 pt-16 pb-14 border-b border-[#d4d4d4] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-10"
         style={{ animation: "fadeUp .5s ease both" }}
       >
         <div className="flex items-end justify-between">
@@ -81,7 +81,7 @@ const PortfolioCaseStudies = () => {
                 {/* Orange overlay on hover */}
                 <div className="absolute inset-0 bg-[#c8622e] opacity-0 group-hover:opacity-[0.06] transition-opacity duration-300" />
                 {/* View arrow badge */}
-                <div className="absolute bottom-4 right-4 flex items-center gap-1.5 bg-[#1c1916] text-[#f5f1ea] font-mono text-[0.6rem] tracking-[0.08em] px-3 py-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
+                <div className="absolute bottom-4 right-4 flex items-center gap-1.5 bg-[#1c1916] text-[#fafafa] font-mono text-[0.6rem] tracking-[0.08em] px-3 py-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
                   View case study
                   <ArrowUpRight className="w-3 h-3" />
                 </div>
@@ -112,7 +112,7 @@ const PortfolioCaseStudies = () => {
                 {study.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-mono text-[0.58rem] tracking-[0.06em] text-[#b0aba3] border border-[#e5e0d7] px-2.5 py-1"
+                    className="font-mono text-[0.58rem] tracking-[0.06em] text-[#b0aba3] border border-[#e8e8e8] px-2.5 py-1"
                   >
                     {tag}
                   </span>

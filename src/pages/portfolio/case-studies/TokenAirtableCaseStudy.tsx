@@ -7,14 +7,14 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
       <span className="font-mono text-[0.72rem] font-light text-[#b0aba3] tracking-[0.12em] uppercase whitespace-nowrap">
         {children}
       </span>
-      <div className="flex-1 h-px bg-[#e5e0d7]" />
+      <div className="flex-1 h-px bg-[#e8e8e8]" />
     </div>
   );
 }
 
 function CaseImage({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="mt-6 border border-[#e5e0d7]">
+    <div className="mt-6 border border-[#e8e8e8]">
       <img src={src} alt={alt} className="w-full block" />
     </div>
   );
@@ -26,7 +26,7 @@ const TokenAirtableCaseStudy = () => {
 
       {/* ── BACK NAV + TITLE ── */}
       <section
-        className="px-12 pt-12 pb-16 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-10"
+        className="px-12 pt-12 pb-16 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pt-10"
         style={{ animation: "fadeUp .5s ease both" }}
       >
         <Link
@@ -45,7 +45,7 @@ const TokenAirtableCaseStudy = () => {
       </section>
 
       {/* ── HERO IMAGE ── */}
-      <div className="border-b border-[#e5e0d7]" style={{ animation: "fadeUp .5s .1s ease both" }}>
+      <div className="border-b border-[#e8e8e8]" style={{ animation: "fadeUp .5s .1s ease both" }}>
         <img
           src="https://framerusercontent.com/images/nPyd0r1sjpLCg0BC8enlmKujdE.png"
           alt="Token Airtable Hero"
@@ -55,7 +55,7 @@ const TokenAirtableCaseStudy = () => {
 
       {/* ── INTRODUCTION ── */}
       <section
-        className="px-12 pt-16 pb-20 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        className="px-12 pt-16 pb-20 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
         style={{ animation: "fadeUp .5s .15s ease both" }}
       >
         <p className="font-grotesk text-[1.15rem] leading-[1.8] text-[#6e6a62] max-w-[680px]">
@@ -65,7 +65,7 @@ const TokenAirtableCaseStudy = () => {
 
       {/* ── PROBLEM / SOLUTION / IMPACT ── */}
       <section
-        className="border-b border-[#e5e0d7]"
+        className="border-b border-[#e8e8e8]"
         style={{ animation: "fadeUp .5s .2s ease both" }}
       >
         <div className="grid grid-cols-3 max-[640px]:grid-cols-1">
@@ -107,7 +107,7 @@ const TokenAirtableCaseStudy = () => {
           ].map((col, i, arr) => (
             <div
               key={col.label}
-              className={`px-12 py-12 max-[860px]:px-7 max-[860px]:py-10 ${i < arr.length - 1 ? "border-r border-[#e5e0d7] max-[640px]:border-r-0 max-[640px]:border-b" : ""}`}
+              className={`px-12 py-12 max-[860px]:px-7 max-[860px]:py-10 ${i < arr.length - 1 ? "border-r border-[#e8e8e8] max-[640px]:border-r-0 max-[640px]:border-b" : ""}`}
             >
               <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-4">{col.label}</h3>
               {col.content}
@@ -118,7 +118,7 @@ const TokenAirtableCaseStudy = () => {
 
       {/* ── SUCCESS CRITERIA ── */}
       <section
-        className="px-12 pt-16 pb-20 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        className="px-12 pt-16 pb-20 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
         style={{ animation: "fadeUp .5s .22s ease both" }}
       >
         <SectionLabel>Success Criteria</SectionLabel>
@@ -142,7 +142,7 @@ const TokenAirtableCaseStudy = () => {
 
       {/* ── TOKEN CATEGORIES ── */}
       <section
-        className="px-12 pt-16 pb-20 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        className="px-12 pt-16 pb-20 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
         style={{ animation: "fadeUp .5s .24s ease both" }}
       >
         <SectionLabel>Token Categories</SectionLabel>
@@ -150,7 +150,7 @@ const TokenAirtableCaseStudy = () => {
           {["Color", "Font", "Space", "Size", "Border", "Border Radius", "Gradient", "Shadow", "Motion", "Time", "Icon"].map((cat) => (
             <span
               key={cat}
-              className="font-mono text-[0.68rem] font-light text-[#6e6a62] border border-[#e5e0d7] px-3 py-1.5"
+              className="font-mono text-[0.68rem] font-light text-[#6e6a62] border border-[#e8e8e8] px-3 py-1.5"
             >
               {cat}
             </span>
@@ -160,7 +160,7 @@ const TokenAirtableCaseStudy = () => {
 
       {/* ── TOKEN TAXONOMY ── */}
       <section
-        className="border-b border-[#e5e0d7]"
+        className="border-b border-[#e8e8e8]"
         style={{ animation: "fadeUp .5s .26s ease both" }}
       >
         <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
@@ -168,11 +168,11 @@ const TokenAirtableCaseStudy = () => {
         </div>
 
         {/* Naming Pattern */}
-        <div className="px-12 pb-14 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pb-10">
+        <div className="px-12 pb-14 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pb-10">
           <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-4 pt-10 max-[860px]:pt-8">
             Naming Pattern
           </h3>
-          <code className="block font-mono text-[0.8rem] text-[#c8622e] bg-[#f0ece4] border border-[#e5e0d7] px-5 py-4 mb-6 overflow-x-auto">
+          <code className="block font-mono text-[0.8rem] text-[#c8622e] bg-[#f0ece4] border border-[#e8e8e8] px-5 py-4 mb-6 overflow-x-auto">
             component-variant-type-element-property-state-direction
           </code>
           <CaseImage
@@ -182,7 +182,7 @@ const TokenAirtableCaseStudy = () => {
         </div>
 
         {/* Level Breakdown */}
-        <div className="px-12 pb-14 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pb-10">
+        <div className="px-12 pb-14 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pb-10">
           <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-4 pt-10 max-[860px]:pt-8">
             Level Breakdown
           </h3>
@@ -204,7 +204,7 @@ const TokenAirtableCaseStudy = () => {
         </div>
 
         {/* Spacing Token Example */}
-        <div className="px-12 pb-14 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pb-10">
+        <div className="px-12 pb-14 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pb-10">
           <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">
             Spacing Token Example
           </h3>
@@ -215,7 +215,7 @@ const TokenAirtableCaseStudy = () => {
         </div>
 
         {/* Color Token Example */}
-        <div className="px-12 pb-14 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pb-10">
+        <div className="px-12 pb-14 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pb-10">
           <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">
             Color Token Example
           </h3>
@@ -242,7 +242,7 @@ const TokenAirtableCaseStudy = () => {
 
       {/* ── AIRTABLE SCHEMA ── */}
       <section
-        className="border-b border-[#e5e0d7]"
+        className="border-b border-[#e8e8e8]"
         style={{ animation: "fadeUp .5s .28s ease both" }}
       >
         <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
@@ -271,7 +271,7 @@ const TokenAirtableCaseStudy = () => {
         ].map((item, i, arr) => (
           <div
             key={item.title}
-            className={`px-12 pb-14 max-[860px]:px-7 max-[860px]:pb-10 ${i < arr.length - 1 ? "border-b border-[#e5e0d7]" : "pb-20 max-[860px]:pb-14"}`}
+            className={`px-12 pb-14 max-[860px]:px-7 max-[860px]:pb-10 ${i < arr.length - 1 ? "border-b border-[#e8e8e8]" : "pb-20 max-[860px]:pb-14"}`}
           >
             <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">{item.title}</h3>
             <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">{item.text}</p>
@@ -282,7 +282,7 @@ const TokenAirtableCaseStudy = () => {
 
       {/* ── FORMULA MAGIC ── */}
       <section
-        className="border-b border-[#e5e0d7]"
+        className="border-b border-[#e8e8e8]"
         style={{ animation: "fadeUp .5s .3s ease both" }}
       >
         <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
@@ -290,14 +290,14 @@ const TokenAirtableCaseStudy = () => {
         </div>
 
         {/* Self-building formula */}
-        <div className="px-12 pb-14 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pb-10">
+        <div className="px-12 pb-14 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pb-10">
           <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">
             Self-Building Name Formula
           </h3>
           <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed mb-5 max-w-[560px]">
             Token names are generated automatically using CONCATENATE formulas that pull from linked fields:
           </p>
-          <pre className="font-mono text-[0.75rem] text-[#c8622e] bg-[#f0ece4] border border-[#e5e0d7] px-5 py-4 overflow-x-auto leading-relaxed mb-4">
+          <pre className="font-mono text-[0.75rem] text-[#c8622e] bg-[#f0ece4] border border-[#e8e8e8] px-5 py-4 overflow-x-auto leading-relaxed mb-4">
 {`CONCATENATE(
   {Component}, "-",
   {Variant},   "-",
@@ -314,7 +314,7 @@ const TokenAirtableCaseStudy = () => {
         </div>
 
         {/* Component Field Links */}
-        <div className="px-12 pb-14 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pb-10">
+        <div className="px-12 pb-14 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pb-10">
           <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">
             Component Field Links
           </h3>
@@ -344,7 +344,7 @@ const TokenAirtableCaseStudy = () => {
 
       {/* ── LESSONS & NEXT STEPS ── */}
       <section
-        className="px-12 pt-16 pb-20 border-b border-[#e5e0d7] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        className="px-12 pt-16 pb-20 border-b border-[#e8e8e8] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
         style={{ animation: "fadeUp .5s .32s ease both" }}
       >
         <SectionLabel>Lessons & Next Steps</SectionLabel>

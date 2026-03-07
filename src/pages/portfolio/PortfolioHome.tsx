@@ -103,7 +103,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
       <span className="font-mono text-[0.72rem] font-light text-[#b0aba3] tracking-[0.12em] uppercase whitespace-nowrap">
         {children}
       </span>
-      <div className="flex-1 h-px bg-[#e5e0d7]" />
+      <div className="flex-1 h-px bg-[#e8e8e8]" />
     </div>
   );
 }
@@ -117,7 +117,7 @@ const PortfolioHome = () => {
       ════════════════════════════════════════ */}
       <section
         id="intro"
-        className="relative border-b border-[#c9c3b8]"
+        className="relative border-b border-[#d4d4d4]"
         style={{ animation: "fadeUp .5s ease both", animationDelay: "120ms" }}
       >
         {/* Side ornaments — sit in the viewport margins, scroll away with the section */}
@@ -135,7 +135,7 @@ const PortfolioHome = () => {
         </div>
 
         <div className="grid grid-cols-[1fr_auto] gap-0 min-[860px]:grid-cols-2 max-[860px]:grid-cols-1">
-          <div className="px-12 pt-[52px] pb-14 border-r border-[#e5e0d7] max-[860px]:border-r-0 max-[860px]:border-b max-[860px]:pb-10 max-[860px]:px-7 max-[860px]:pt-10">
+          <div className="px-12 pt-[52px] pb-14 border-r border-[#e8e8e8] max-[860px]:border-r-0 max-[860px]:border-b max-[860px]:pb-10 max-[860px]:px-7 max-[860px]:pt-10">
             <p className="font-mono text-[0.6rem] font-light text-[#b0aba3] tracking-[0.12em] uppercase mb-8">
               Hello
             </p>
@@ -167,7 +167,7 @@ const PortfolioHome = () => {
       ════════════════════════════════════════ */}
       <section
         id="case-studies"
-        className="px-12 pt-16 pb-20 border-b border-[#c9c3b8] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
+        className="px-12 pt-16 pb-20 border-b border-[#d4d4d4] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
         style={{ animation: "fadeUp .5s ease both", animationDelay: "200ms" }}
       >
         <div className="flex items-center justify-between mb-3">
@@ -182,7 +182,7 @@ const PortfolioHome = () => {
             <Link
               key={study.number}
               to={study.href}
-              className="group relative grid grid-cols-[64px_1fr_20px] items-start py-7 border-b border-[#e5e0d7] first:border-t gap-5 no-underline transition-all duration-200"
+              className="group relative grid grid-cols-[64px_1fr_20px] items-start py-7 border-b border-[#e8e8e8] first:border-t gap-5 no-underline transition-all duration-200"
             >
               {/* Ghost number */}
               <span className="font-mono text-[2.8rem] font-light leading-none select-none text-[#ece8e2] group-hover:text-[rgba(200,98,46,0.18)] transition-colors duration-300 -mt-1">
@@ -210,7 +210,7 @@ const PortfolioHome = () => {
       ════════════════════════════════════════ */}
       <section
         id="process"
-        className="border-b border-[#c9c3b8]"
+        className="border-b border-[#d4d4d4]"
         style={{ animation: "fadeUp .5s ease both", animationDelay: "280ms" }}
       >
         <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
@@ -224,20 +224,20 @@ const PortfolioHome = () => {
         </div>
 
         {/* 4-column stepper */}
-        <div className="grid grid-cols-4 border-t border-[#e5e0d7] max-[640px]:grid-cols-2 max-[400px]:grid-cols-1">
+        <div className="grid grid-cols-4 border-t border-[#e8e8e8] max-[640px]:grid-cols-2 max-[400px]:grid-cols-1">
           {processSteps.map((step, i) => (
             <div
               key={step.number}
               className={`px-8 py-10 flex flex-col max-[860px]:px-6 max-[860px]:py-8 ${
-                i < 3 ? "border-r border-[#e5e0d7]" : ""
-              } max-[640px]:${i % 2 === 0 ? "border-r border-[#e5e0d7]" : ""} max-[640px]:${i < 2 ? "border-b border-[#e5e0d7]" : ""}`}
+                i < 3 ? "border-r border-[#e8e8e8]" : ""
+              } max-[640px]:${i % 2 === 0 ? "border-r border-[#e8e8e8]" : ""} max-[640px]:${i < 2 ? "border-b border-[#e8e8e8]" : ""}`}
             >
               {/* Step number + connecting dot */}
               <div className="flex items-center gap-3 mb-6">
                 <span className="font-mono text-[0.55rem] text-[#c8622e] tracking-[0.08em]">
                   {step.number}
                 </span>
-                <div className="flex-1 h-px bg-[#e5e0d7]" />
+                <div className="flex-1 h-px bg-[#e8e8e8]" />
                 <div className="w-1.5 h-1.5 rounded-full bg-[#1c1916] flex-shrink-0" />
               </div>
 
@@ -250,7 +250,7 @@ const PortfolioHome = () => {
               <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed mb-auto">
                 {step.description}
               </p>
-              <p className="font-mono text-[0.72rem] font-light text-[#b0aba3] mt-5 pt-4 border-t border-[#e5e0d7] leading-relaxed">
+              <p className="font-mono text-[0.72rem] font-light text-[#b0aba3] mt-5 pt-4 border-t border-[#e8e8e8] leading-relaxed">
                 <span className="text-[#9b9690]">↳ </span>{step.deliverables}
               </p>
             </div>
@@ -264,7 +264,7 @@ const PortfolioHome = () => {
       ════════════════════════════════════════ */}
       <section
         id="stories"
-        className="border-b border-[#c9c3b8]"
+        className="border-b border-[#d4d4d4]"
         style={{ animation: "fadeUp .5s ease both", animationDelay: "360ms" }}
       >
         <div className="px-12 pt-16 pb-0 max-[860px]:px-7 max-[860px]:pt-12">
@@ -276,7 +276,7 @@ const PortfolioHome = () => {
             <div
               key={index}
               className={`px-12 py-12 max-[860px]:px-7 max-[860px]:py-10 ${
-                index < testimonials.length - 1 ? "border-b border-[#e5e0d7]" : ""
+                index < testimonials.length - 1 ? "border-b border-[#e8e8e8]" : ""
               }`}
             >
               {/* Large opening quote mark */}
@@ -322,21 +322,21 @@ const PortfolioHome = () => {
       ════════════════════════════════════════ */}
       <section
         id="faq"
-        className="border-b border-[#c9c3b8]"
+        className="border-b border-[#d4d4d4]"
         style={{ animation: "fadeUp .5s ease both", animationDelay: "440ms" }}
       >
         <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
           <SectionLabel>FAQ</SectionLabel>
         </div>
 
-        <div className="border-t border-[#e5e0d7]">
+        <div className="border-t border-[#e8e8e8]">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="grid grid-cols-[1fr_1fr] border-b border-[#e5e0d7] max-[640px]:grid-cols-1"
+              className="grid grid-cols-[1fr_1fr] border-b border-[#e8e8e8] max-[640px]:grid-cols-1"
             >
               {/* Question */}
-              <div className="px-12 py-8 border-r border-[#e5e0d7] max-[860px]:px-7 max-[640px]:border-r-0 max-[640px]:border-b max-[640px]:py-6">
+              <div className="px-12 py-8 border-r border-[#e8e8e8] max-[860px]:px-7 max-[640px]:border-r-0 max-[640px]:border-b max-[640px]:py-6">
                 <span className="font-mono text-[0.52rem] text-[#c8622e] tracking-[0.1em] block mb-3">
                   {String(index + 1).padStart(2, "0")}
                 </span>
