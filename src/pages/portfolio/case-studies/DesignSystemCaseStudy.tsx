@@ -55,16 +55,15 @@ const DesignSystemCaseStudy = () => {
         </div>
 
         {/* Meta bar */}
-        <div className="grid grid-cols-4 border-t border-[#e5e0d7] max-[640px]:grid-cols-2">
+        <div className="grid grid-cols-3 border-t border-[#e5e0d7] max-[640px]:grid-cols-2">
           {[
             { label: "Year",     value: "2024" },
-            { label: "Role",     value: "Design System Lead" },
             { label: "Company",  value: "IxDF" },
             { label: "Stack",    value: "Figma · Airtable · Storybook" },
           ].map((item, i) => (
             <div
               key={item.label}
-              className={`px-12 py-6 max-[860px]:px-7 ${i < 3 ? "border-r border-[#e5e0d7] max-[640px]:border-r-0" : ""} ${i === 1 ? "max-[640px]:border-r border-[#e5e0d7]" : ""} ${i < 2 ? "max-[640px]:border-b border-[#e5e0d7]" : ""}`}
+              className={`px-12 py-6 max-[860px]:px-7 ${i < 2 ? "border-r border-[#e5e0d7]" : ""} ${i === 0 ? "max-[640px]:border-b border-[#e5e0d7]" : ""}`}
             >
               <p className="font-mono text-[0.52rem] tracking-[0.1em] text-[#b0aba3] uppercase mb-1.5">{item.label}</p>
               <p className="font-mono text-[0.72rem] text-[#1c1916]">{item.value}</p>
