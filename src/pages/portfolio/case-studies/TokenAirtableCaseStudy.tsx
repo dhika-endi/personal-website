@@ -73,7 +73,7 @@ const TokenAirtableCaseStudy = () => {
             {
               label: "Problem",
               content: (
-                <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed">
+                <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed">
                   Ad-hoc token names created confusion. Teams used inconsistent naming patterns, making it hard to find, reuse, or update tokens.
                 </p>
               ),
@@ -85,7 +85,7 @@ const TokenAirtableCaseStudy = () => {
                   {["Centralized token database in Airtable", "Formula-driven naming conventions"].map((item) => (
                     <li key={item} className="flex gap-2.5">
                       <span className="font-mono text-[0.6rem] text-[#c8622e] mt-1 flex-shrink-0">—</span>
-                      <span className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed">{item}</span>
+                      <span className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -98,7 +98,7 @@ const TokenAirtableCaseStudy = () => {
                   {["80% reduction in naming conflicts", "75% faster token lookup", "50% faster onboarding"].map((item) => (
                     <li key={item} className="flex gap-2.5">
                       <span className="font-mono text-[0.6rem] text-[#c8622e] mt-1 flex-shrink-0">—</span>
-                      <span className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed">{item}</span>
+                      <span className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -132,7 +132,7 @@ const TokenAirtableCaseStudy = () => {
           ].map((item) => (
             <li key={item.label} className="flex gap-3">
               <span className="font-mono text-[0.6rem] text-[#c8622e] mt-1 flex-shrink-0">—</span>
-              <span className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed">
+              <span className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed">
                 <span className="text-[#1c1916]">{item.label}:</span> {item.text}
               </span>
             </li>
@@ -196,7 +196,7 @@ const TokenAirtableCaseStudy = () => {
               { level: "Level 6 – State", desc: "Interaction state (default, hover, pressed)" },
               { level: "Level 7 – Direction", desc: "Directional modifier (top, left, x, y)" },
             ].map((item) => (
-              <li key={item.level} className="font-mono text-[0.8rem] font-light text-[#6e6a62]">
+              <li key={item.level} className="font-mono text-[0.85rem] font-light text-[#6e6a62]">
                 <span className="text-[#1c1916]">{item.level}:</span> {item.desc}
               </li>
             ))}
@@ -229,7 +229,7 @@ const TokenAirtableCaseStudy = () => {
         <div className="px-12 pb-20 max-[860px]:px-7 max-[860px]:pb-14">
           <div className="mt-10 border-l-2 border-[#c8622e] pl-6">
             <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-3">Why It Works</h3>
-            <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed max-w-[600px]">
+            <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed max-w-[600px]">
               This hierarchical naming convention makes tokens self-documenting. Anyone can read a token name like{" "}
               <code className="font-mono text-[0.75rem] text-[#c8622e] bg-[#f0ece4] px-1.5 py-0.5">
                 button-primary-color-label-text-hover
@@ -274,7 +274,7 @@ const TokenAirtableCaseStudy = () => {
             className={`px-12 pb-14 max-[860px]:px-7 max-[860px]:pb-10 ${i < arr.length - 1 ? "border-b border-[#e8e8e8]" : "pb-20 max-[860px]:pb-14"}`}
           >
             <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">{item.title}</h3>
-            <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">{item.text}</p>
+            <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">{item.text}</p>
             <CaseImage src={item.image} alt={item.alt} />
           </div>
         ))}
@@ -294,7 +294,7 @@ const TokenAirtableCaseStudy = () => {
           <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">
             Self-Building Name Formula
           </h3>
-          <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed mb-5 max-w-[560px]">
+          <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed mb-5 max-w-[560px]">
             Token names are generated automatically using CONCATENATE formulas that pull from linked fields:
           </p>
           <pre className="font-mono text-[0.75rem] text-[#c8622e] bg-[#f0ece4] border border-[#e8e8e8] px-5 py-4 overflow-x-auto leading-relaxed mb-4">
@@ -318,7 +318,7 @@ const TokenAirtableCaseStudy = () => {
           <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">
             Component Field Links
           </h3>
-          <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">
+          <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">
             Linked records connect tokens to their parent components, enabling dependency tracking.
           </p>
           <CaseImage
@@ -332,7 +332,7 @@ const TokenAirtableCaseStudy = () => {
           <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">
             Primitive Field Links
           </h3>
-          <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">
+          <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">
             Semantic tokens link back to primitive values, creating a traceable hierarchy.
           </p>
           <CaseImage
@@ -361,7 +361,7 @@ const TokenAirtableCaseStudy = () => {
               ].map((item) => (
                 <li key={item} className="flex gap-2.5">
                   <span className="font-mono text-[0.6rem] text-[#c8622e] mt-1 flex-shrink-0">—</span>
-                  <span className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed">{item}</span>
+                  <span className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
@@ -376,7 +376,7 @@ const TokenAirtableCaseStudy = () => {
               ].map((item) => (
                 <li key={item} className="flex gap-2.5">
                   <span className="font-mono text-[0.6rem] text-[#c8622e] mt-1 flex-shrink-0">—</span>
-                  <span className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed">{item}</span>
+                  <span className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>

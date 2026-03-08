@@ -103,7 +103,7 @@ const PortfolioCaseStudies = () => {
               </div>
 
               {/* Description */}
-              <p className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed max-w-[600px] mb-5">
+              <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed max-w-[600px] mb-5">
                 {study.description}
               </p>
 

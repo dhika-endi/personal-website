@@ -170,11 +170,11 @@ const PortfolioAbout = () => {
                     </span>
                   )}
                 </div>
-                <p className="font-mono text-[0.72rem] text-[#c8622e] mb-3">
+                <p className="font-mono text-[0.78rem] text-[#c8622e] mb-3">
                   {exp.company} · {exp.location}
                 </p>
                 {"bullets" in exp ? (
-                  <ul className="font-mono text-[0.75rem] font-light text-[#6e6a62] leading-relaxed max-w-[600px] space-y-1.5 list-none">
+                  <ul className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed max-w-[600px] space-y-1.5 list-none">
                     {(exp as typeof exp & { bullets: string[] }).bullets.map((b, i) => (
                       <li key={i} className="flex gap-2">
                         <span className="text-[#b0aba3] flex-shrink-0">•</span>
@@ -183,7 +183,7 @@ const PortfolioAbout = () => {
                     ))}
                   </ul>
                 ) : (
-                  <p className="font-mono text-[0.75rem] font-light text-[#6e6a62] leading-relaxed max-w-[600px]">
+                  <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed max-w-[600px]">
                     {(exp as typeof exp & { description: string }).description}
                   </p>
                 )}
@@ -237,7 +237,7 @@ const PortfolioAbout = () => {
               <h3 className="font-grotesk font-normal text-[1rem] text-[#1c1916] leading-snug mb-3">
                 {step.title}
               </h3>
-              <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed mb-auto">
+              <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed mb-auto">
                 {step.description}
               </p>
               <p className="font-mono text-[0.72rem] font-light text-[#b0aba3] mt-5 pt-4 border-t border-[#e8e8e8] leading-relaxed">

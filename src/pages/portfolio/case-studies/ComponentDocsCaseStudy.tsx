@@ -91,7 +91,7 @@ const ComponentDocsCaseStudy = () => {
                 {group.items.map((item) => (
                   <li key={item} className="flex gap-2.5">
                     <span className="font-mono text-[0.6rem] text-[#c8622e] mt-1 flex-shrink-0">—</span>
-                    <span className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed">{item}</span>
+                    <span className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -106,7 +106,7 @@ const ComponentDocsCaseStudy = () => {
         style={{ animation: "fadeUp .5s .22s ease both" }}
       >
         <SectionLabel>Documentation Structure</SectionLabel>
-        <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed mb-8 max-w-[560px]">
+        <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed mb-8 max-w-[560px]">
           Each component page follows a consistent structure with these sections:
         </p>
         <ol className="grid grid-cols-3 gap-x-8 gap-y-3 max-[640px]:grid-cols-1">
@@ -115,7 +115,7 @@ const ComponentDocsCaseStudy = () => {
             "States", "Behavior", "Best Practices",
             "Do and Don't", "Responsive", "Changelog",
           ].map((item, i) => (
-            <li key={item} className="flex gap-2.5 font-mono text-[0.8rem] font-light text-[#6e6a62]">
+            <li key={item} className="flex gap-2.5 font-mono text-[0.85rem] font-light text-[#6e6a62]">
               <span className="text-[#c8622e] flex-shrink-0">
                 {String(i + 1).padStart(2, "0")}.
               </span>
@@ -131,12 +131,12 @@ const ComponentDocsCaseStudy = () => {
         style={{ animation: "fadeUp .5s .24s ease both" }}
       >
         <SectionLabel>Anatomy</SectionLabel>
-        <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed mb-6 max-w-[560px]">
+        <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed mb-6 max-w-[560px]">
           Anatomy diagrams break down each component into its constituent parts. For Button, we identify three key elements:
         </p>
         <ol className="space-y-2 mb-8">
           {["Left Icon (optional)", "Label (required)", "Right Icon (optional)"].map((item, i) => (
-            <li key={item} className="flex gap-2.5 font-mono text-[0.8rem] font-light text-[#6e6a62]">
+            <li key={item} className="flex gap-2.5 font-mono text-[0.85rem] font-light text-[#6e6a62]">
               <span className="text-[#c8622e] flex-shrink-0">{i + 1}.</span>
               {item}
             </li>
@@ -176,7 +176,7 @@ const ComponentDocsCaseStudy = () => {
             className={`px-12 pb-14 max-[860px]:px-7 max-[860px]:pb-10 ${i < arr.length - 1 ? "border-b border-[#e8e8e8]" : "pb-20 max-[860px]:pb-14"}`}
           >
             <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">{item.title}</h3>
-            <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">{item.text}</p>
+            <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">{item.text}</p>
             <CaseImage src={item.image} alt={item.alt} />
           </div>
         ))}
@@ -188,7 +188,7 @@ const ComponentDocsCaseStudy = () => {
         style={{ animation: "fadeUp .5s .28s ease both" }}
       >
         <SectionLabel>States</SectionLabel>
-        <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed mb-6 max-w-[560px]">
+        <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed mb-6 max-w-[560px]">
           Every interactive component needs clearly defined states. Button states include:
         </p>
         <ul className="space-y-3 mb-8">
@@ -199,7 +199,7 @@ const ComponentDocsCaseStudy = () => {
             { state: "Focused", desc: "Keyboard navigation indicator" },
             { state: "Disabled", desc: "Non-interactive state" },
           ].map((item) => (
-            <li key={item.state} className="font-mono text-[0.8rem] font-light text-[#6e6a62]">
+            <li key={item.state} className="font-mono text-[0.85rem] font-light text-[#6e6a62]">
               <span className="text-[#1c1916]">{item.state}:</span> {item.desc}
             </li>
           ))}
@@ -238,7 +238,7 @@ const ComponentDocsCaseStudy = () => {
             className={`px-12 pb-14 max-[860px]:px-7 max-[860px]:pb-10 ${i < arr.length - 1 ? "border-b border-[#e8e8e8]" : "pb-20 max-[860px]:pb-14"}`}
           >
             <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">{item.title}</h3>
-            <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">{item.text}</p>
+            <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">{item.text}</p>
             <CaseImage src={item.image} alt={item.alt} />
           </div>
         ))}
@@ -250,7 +250,7 @@ const ComponentDocsCaseStudy = () => {
         style={{ animation: "fadeUp .5s .32s ease both" }}
       >
         <SectionLabel>Best Practices</SectionLabel>
-        <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed mb-6 max-w-[560px]">
+        <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed mb-6 max-w-[560px]">
           General guidelines for using buttons effectively in interfaces.
         </p>
         <CaseImage
@@ -279,7 +279,7 @@ const ComponentDocsCaseStudy = () => {
             className={`px-12 pb-14 max-[860px]:px-7 max-[860px]:pb-10 ${i < arr.length - 1 ? "border-b border-[#e8e8e8]" : "pb-20 max-[860px]:pb-14"}`}
           >
             <h3 className="font-grotesk font-normal text-[1.15rem] text-[#1c1916] mb-3 pt-10 max-[860px]:pt-8">{item.title}</h3>
-            <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">{item.text}</p>
+            <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">{item.text}</p>
             <CaseImage src={item.image} alt={item.alt} />
           </div>
         ))}
@@ -291,7 +291,7 @@ const ComponentDocsCaseStudy = () => {
         style={{ animation: "fadeUp .5s .36s ease both" }}
       >
         <SectionLabel>Responsive Guidelines</SectionLabel>
-        <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed mb-6 max-w-[560px]">
+        <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed mb-6 max-w-[560px]">
           Buttons adapt to different screen sizes with these considerations:
         </p>
         <ul className="space-y-3 mb-8">
@@ -300,7 +300,7 @@ const ComponentDocsCaseStudy = () => {
             { label: "Full-width Buttons", desc: "Use sparingly and only when appropriate for the context." },
             { label: "Text Wrapping", desc: "Prevent label overflow by keeping text short." },
           ].map((item) => (
-            <li key={item.label} className="font-mono text-[0.8rem] font-light text-[#6e6a62]">
+            <li key={item.label} className="font-mono text-[0.85rem] font-light text-[#6e6a62]">
               <span className="text-[#1c1916]">{item.label}:</span> {item.desc}
             </li>
           ))}
@@ -317,7 +317,7 @@ const ComponentDocsCaseStudy = () => {
         style={{ animation: "fadeUp .5s .38s ease both" }}
       >
         <SectionLabel>Changelog</SectionLabel>
-        <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed max-w-[560px]">
+        <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed max-w-[560px]">
           Every component includes a changelog tracking version history, breaking changes, new features, and bug fixes. This helps teams stay updated and plan migrations.
         </p>
       </section>

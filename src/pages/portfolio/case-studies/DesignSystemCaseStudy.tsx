@@ -123,7 +123,7 @@ const DesignSystemCaseStudy = () => {
               ].map((item) => (
                 <li key={item.label} className="flex gap-3">
                   <span className="font-mono text-[0.6rem] text-[#c8622e] mt-1 flex-shrink-0">—</span>
-                  <span className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed">
+                  <span className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed">
                     <span className="text-[#1c1916]">{item.label}: </span>{item.text}
                   </span>
                 </li>
@@ -142,7 +142,7 @@ const DesignSystemCaseStudy = () => {
               ].map((item) => (
                 <li key={item.label} className="flex gap-3">
                   <span className="font-mono text-[0.6rem] text-[#c8622e] mt-1 flex-shrink-0">—</span>
-                  <span className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed">
+                  <span className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed">
                     <span className="text-[#1c1916]">{item.label}: </span>{item.text}
                   </span>
                 </li>
@@ -179,7 +179,7 @@ const DesignSystemCaseStudy = () => {
             <div key={c.number}>
               <span className="font-mono text-[0.52rem] text-[#c8622e] tracking-[0.1em] block mb-3">{c.number}</span>
               <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-2 leading-snug">{c.title}</h3>
-              <p className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed">{c.text}</p>
+              <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed">{c.text}</p>
             </div>
           ))}
         </div>
@@ -231,7 +231,7 @@ const DesignSystemCaseStudy = () => {
             className={`px-12 pt-10 pb-14 max-[860px]:px-7 max-[860px]:pb-10 ${i < arr.length - 1 ? "border-b border-[#e8e8e8]" : ""}`}
           >
             <h3 className="font-grotesk font-normal text-[1.1rem] text-[#1c1916] mb-3">{item.title}</h3>
-            <p className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">{item.text}</p>
+            <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">{item.text}</p>
             <CaseImage src={item.image} alt={item.alt} />
           </div>
         ))}
@@ -248,13 +248,13 @@ const DesignSystemCaseStudy = () => {
         <div className="grid min-[640px]:grid-cols-2 border-t border-[#e8e8e8] mt-6">
           <div className="px-12 py-10 border-r border-[#e8e8e8] max-[640px]:border-r-0 max-[640px]:border-b max-[860px]:px-7">
             <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-2">Universal Components</h3>
-            <p className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed">
+            <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed">
               Buttons, Inputs, Checkboxes, Radios, Selects, Toggles, and other primitives shared across all products and platforms.
             </p>
           </div>
           <div className="px-12 py-10 max-[860px]:px-7">
             <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-2">Specific Component Library</h3>
-            <p className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed">
+            <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed">
               Product-specific patterns like data tables, dashboards, and workflow wizards built on top of universal components.
             </p>
           </div>
@@ -283,7 +283,7 @@ const DesignSystemCaseStudy = () => {
             ].map((item) => (
               <li key={item} className="flex gap-3">
                 <span className="font-mono text-[0.6rem] text-[#c8622e] mt-1 flex-shrink-0">—</span>
-                <span className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed">{item}</span>
+                <span className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed">{item}</span>
               </li>
             ))}
           </ul>
@@ -314,7 +314,7 @@ const DesignSystemCaseStudy = () => {
 
         <div className="px-12 pt-8 pb-12 border-b border-[#e8e8e8] max-[860px]:px-7">
           <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-3">Overview & Variants</h3>
-          <p className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">
+          <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">
             Each component page opens with a summary of its purpose, followed by live examples of every variant. Designers and engineers can copy code snippets directly.
           </p>
           <CaseImage
@@ -325,7 +325,7 @@ const DesignSystemCaseStudy = () => {
 
         <div className="px-12 pt-8 pb-12 max-[860px]:px-7">
           <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-3">Anatomy Breakdown</h3>
-          <p className="font-mono text-[0.78rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">
+          <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">
             Numbered diagrams highlight each part of a component (icon, label, container) so teams understand how to customize or extend it safely.
           </p>
           <CaseImage

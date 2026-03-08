@@ -3,6 +3,7 @@ import { ArrowUpRight, Star } from "lucide-react";
 import samanthaAvatar from "@/assets/samantha-avatar.jpeg";
 import DNAHelix from "@/components/portfolio/DNAHelix";
 import TokenGraph, { LEFT_NODES, LEFT_EDGES, RIGHT_NODES, RIGHT_EDGES } from "@/components/portfolio/TokenGraph";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 const testimonials = [
   {
@@ -120,7 +121,7 @@ const PortfolioHome = () => {
         className="relative border-b border-[#d4d4d4]"
         style={{ animation: "fadeUp .5s ease both", animationDelay: "120ms" }}
       >
-        {/* Side ornaments — sit in the viewport margins, scroll away with the section */}
+        {/* Side ornaments */}
         <div
           className="absolute top-0 bottom-0 pointer-events-none overflow-hidden hidden min-[1300px]:block"
           style={{ right: "100%", width: "calc((100vw - 1100px) / 2)" }}
@@ -163,71 +164,73 @@ const PortfolioHome = () => {
 
       {/* ═══════════════════════════════════════
           SECTION 2 — CASE STUDIES
-          Ghost-number editorial rows
       ════════════════════════════════════════ */}
       <section
         id="case-studies"
         className="px-12 pt-16 pb-20 border-b border-[#d4d4d4] max-[860px]:px-7 max-[860px]:pt-12 max-[860px]:pb-14"
-        style={{ animation: "fadeUp .5s ease both", animationDelay: "200ms" }}
       >
-        <div className="flex items-center justify-between mb-3">
-          <SectionLabel>Case Studies</SectionLabel>
-          <span className="font-mono text-[0.58rem] font-light text-[#b0aba3] mb-8 ml-4 flex-shrink-0">
-            3 works
-          </span>
-        </div>
+        <ScrollReveal variant="fade-up">
+          <div className="flex items-center justify-between mb-3">
+            <SectionLabel>Case Studies</SectionLabel>
+            <span className="font-mono text-[0.58rem] font-light text-[#b0aba3] mb-8 ml-4 flex-shrink-0">
+              3 works
+            </span>
+          </div>
+        </ScrollReveal>
 
         <div>
           {caseStudies.map((study, index) => (
-            <Link
-              key={study.number}
-              to={study.href}
-              className="group relative grid grid-cols-[64px_1fr_20px] items-start py-7 border-b border-[#e8e8e8] first:border-t gap-5 no-underline transition-all duration-200"
-            >
-              {/* Ghost number */}
-              <span className="font-mono text-[2.8rem] font-light leading-none select-none text-[#ece8e2] group-hover:text-[rgba(200,98,46,0.18)] transition-colors duration-300 -mt-1">
-                {study.number}
-              </span>
+            <ScrollReveal key={study.number} variant="fade-up" delay={index * 0.12}>
+              <Link
+                to={study.href}
+                className={`group relative grid grid-cols-[64px_1fr_20px] items-start py-7 border-b border-[#e8e8e8] gap-5 no-underline transition-all duration-200 ${
+                  index === 0 ? "border-t" : ""
+                }`}
+              >
+                {/* Ghost number */}
+                <span className="font-mono text-[2.8rem] font-light leading-none select-none text-[#ece8e2] group-hover:text-[rgba(200,98,46,0.18)] transition-colors duration-300 -mt-1">
+                  {study.number}
+                </span>
 
-              <div>
-                <h3 className="font-grotesk font-normal text-[1.2rem] text-[#1c1916] group-hover:text-[#c8622e] transition-colors duration-200 leading-snug mb-2">
-                  {study.title}
-                </h3>
-                <p className="font-mono text-[0.82rem] font-light text-[#b0aba3] leading-relaxed">
-                  {study.description}
-                </p>
-              </div>
+                <div>
+                  <h3 className="font-grotesk font-normal text-[1.2rem] text-[#1c1916] group-hover:text-[#c8622e] transition-colors duration-200 leading-snug mb-2">
+                    {study.title}
+                  </h3>
+                  <p className="font-mono text-[0.85rem] font-light text-[#b0aba3] leading-relaxed">
+                    {study.description}
+                  </p>
+                </div>
 
-              <ArrowUpRight className="w-4 h-4 text-[#b0aba3] opacity-0 group-hover:opacity-100 group-hover:text-[#c8622e] transition-all duration-200 mt-1 flex-shrink-0" />
-            </Link>
+                <ArrowUpRight className="w-4 h-4 text-[#b0aba3] opacity-0 group-hover:opacity-100 group-hover:text-[#c8622e] transition-all duration-200 mt-1 flex-shrink-0" />
+              </Link>
+            </ScrollReveal>
           ))}
         </div>
       </section>
 
       {/* ═══════════════════════════════════════
           SECTION 3 — PROCESS
-          Horizontal 4-column stepper
       ════════════════════════════════════════ */}
-      <section
-        id="process"
-        className="border-b border-[#d4d4d4]"
-        style={{ animation: "fadeUp .5s ease both", animationDelay: "280ms" }}
-      >
-        <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
-          <SectionLabel>The process</SectionLabel>
-          <h2 className="font-grotesk font-normal text-[2rem] leading-tight tracking-[-0.015em] text-[#1c1916] mb-3 -mt-2">
-            A structured approach to building systems
-          </h2>
-          <p className="font-grotesk text-[1.1rem] leading-[1.75] text-[#6e6a62] mb-10">
-            UI debt compounds fast. A design system brings order—and with AI tools like Claude Code, I move through audits, token naming, and documentation in a fraction of the usual time.
-          </p>
-        </div>
+      <section id="process" className="border-b border-[#d4d4d4]">
+        <ScrollReveal variant="fade-up">
+          <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
+            <SectionLabel>The process</SectionLabel>
+            <h2 className="font-grotesk font-normal text-[2rem] leading-tight tracking-[-0.015em] text-[#1c1916] mb-3 -mt-2">
+              A structured approach to building systems
+            </h2>
+            <p className="font-grotesk text-[1.1rem] leading-[1.75] text-[#6e6a62] mb-10">
+              UI debt compounds fast. A design system brings order—and with AI tools like Claude Code, I move through audits, token naming, and documentation in a fraction of the usual time.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* 4-column stepper */}
         <div className="grid grid-cols-4 border-t border-[#e8e8e8] max-[640px]:grid-cols-2 max-[400px]:grid-cols-1">
           {processSteps.map((step, i) => (
-            <div
+            <ScrollReveal
               key={step.number}
+              variant="fade-up"
+              delay={i * 0.1}
               className={`px-8 py-10 flex flex-col max-[860px]:px-6 max-[860px]:py-8 ${
                 i < 3 ? "border-r border-[#e8e8e8]" : ""
               } max-[640px]:${i % 2 === 0 ? "border-r border-[#e8e8e8]" : ""} max-[640px]:${i < 2 ? "border-b border-[#e8e8e8]" : ""}`}
@@ -247,111 +250,105 @@ const PortfolioHome = () => {
               <h3 className="font-grotesk font-normal text-[1rem] text-[#1c1916] leading-snug mb-3">
                 {step.title}
               </h3>
-              <p className="font-mono text-[0.8rem] font-light text-[#6e6a62] leading-relaxed mb-auto">
+              <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed mb-auto">
                 {step.description}
               </p>
               <p className="font-mono text-[0.72rem] font-light text-[#b0aba3] mt-5 pt-4 border-t border-[#e8e8e8] leading-relaxed">
                 <span className="text-[#9b9690]">↳ </span>{step.deliverables}
               </p>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
 
       {/* ═══════════════════════════════════════
           SECTION 4 — STORIES
-          Full-bleed pull quotes
       ════════════════════════════════════════ */}
-      <section
-        id="stories"
-        className="border-b border-[#d4d4d4]"
-        style={{ animation: "fadeUp .5s ease both", animationDelay: "360ms" }}
-      >
-        <div className="px-12 pt-16 pb-0 max-[860px]:px-7 max-[860px]:pt-12">
-          <SectionLabel>Stories</SectionLabel>
-        </div>
+      <section id="stories" className="border-b border-[#d4d4d4]">
+        <ScrollReveal variant="fade-up">
+          <div className="px-12 pt-16 pb-0 max-[860px]:px-7 max-[860px]:pt-12">
+            <SectionLabel>Stories</SectionLabel>
+          </div>
+        </ScrollReveal>
 
         <div>
           {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className={`px-12 py-12 max-[860px]:px-7 max-[860px]:py-10 ${
-                index < testimonials.length - 1 ? "border-b border-[#e8e8e8]" : ""
-              }`}
-            >
-              {/* Large opening quote mark */}
-              <span className="font-grotesk text-[5rem] leading-none text-[#c8622e] select-none block -mb-3">
-                "
-              </span>
+            <ScrollReveal key={index} variant="fade-up" delay={index * 0.15}>
+              <div
+                className={`px-12 py-12 max-[860px]:px-7 max-[860px]:py-10 ${
+                  index < testimonials.length - 1 ? "border-b border-[#e8e8e8]" : ""
+                }`}
+              >
+                {/* Large opening quote mark */}
+                <span className="font-grotesk text-[5rem] leading-none text-[#c8622e] select-none block -mb-3">
+                  "
+                </span>
 
-              {/* Quote text */}
-              <blockquote className="font-grotesk font-normal text-[0.95rem] leading-[1.75] text-[#1c1916] max-w-[720px] mb-8">
-                {testimonial.quote}
-              </blockquote>
+                {/* Quote text */}
+                <blockquote className="font-grotesk font-normal text-[0.95rem] leading-[1.75] text-[#1c1916] max-w-[720px] mb-8">
+                  {testimonial.quote}
+                </blockquote>
 
-              {/* Attribution row */}
-              <div className="flex items-center gap-3">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-8 h-8 rounded-full object-cover flex-shrink-0"
-                />
-                <div className="flex items-baseline gap-2">
-                  <span className="font-grotesk text-[0.9rem] text-[#1c1916]">
-                    {testimonial.name}
-                  </span>
-                  <span className="font-mono text-[0.56rem] font-light text-[#b0aba3]">
-                    — {testimonial.role}
-                  </span>
-                </div>
-                <div className="ml-auto flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-2.5 h-2.5 fill-[#c8622e] text-[#c8622e]" />
-                  ))}
-                  <span className="font-mono text-[0.52rem] font-light text-[#b0aba3] ml-1.5">5.0</span>
+                {/* Attribution row */}
+                <div className="flex items-center gap-3">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-8 h-8 rounded-full object-cover flex-shrink-0"
+                  />
+                  <div className="flex items-baseline gap-2">
+                    <span className="font-grotesk text-[0.9rem] text-[#1c1916]">
+                      {testimonial.name}
+                    </span>
+                    <span className="font-mono text-[0.56rem] font-light text-[#b0aba3]">
+                      — {testimonial.role}
+                    </span>
+                  </div>
+                  <div className="ml-auto flex items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-2.5 h-2.5 fill-[#c8622e] text-[#c8622e]" />
+                    ))}
+                    <span className="font-mono text-[0.52rem] font-light text-[#b0aba3] ml-1.5">5.0</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
 
       {/* ═══════════════════════════════════════
           SECTION 5 — FAQ
-          Two-column newspaper split (always open)
       ════════════════════════════════════════ */}
-      <section
-        id="faq"
-        className="border-b border-[#d4d4d4]"
-        style={{ animation: "fadeUp .5s ease both", animationDelay: "440ms" }}
-      >
-        <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
-          <SectionLabel>FAQ</SectionLabel>
-        </div>
+      <section id="faq" className="border-b border-[#d4d4d4]">
+        <ScrollReveal variant="fade-up">
+          <div className="px-12 pt-16 max-[860px]:px-7 max-[860px]:pt-12">
+            <SectionLabel>FAQ</SectionLabel>
+          </div>
+        </ScrollReveal>
 
         <div className="border-t border-[#e8e8e8]">
           {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="grid grid-cols-[1fr_1fr] border-b border-[#e8e8e8] max-[640px]:grid-cols-1"
-            >
-              {/* Question */}
-              <div className="px-12 py-8 border-r border-[#e8e8e8] max-[860px]:px-7 max-[640px]:border-r-0 max-[640px]:border-b max-[640px]:py-6">
-                <span className="font-mono text-[0.52rem] text-[#c8622e] tracking-[0.1em] block mb-3">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <p className="font-grotesk text-[1.05rem] leading-[1.6] text-[#1c1916]">
-                  {faq.question}
-                </p>
-              </div>
+            <ScrollReveal key={index} variant="fade-up" delay={index * 0.08}>
+              <div className="grid grid-cols-[1fr_1fr] border-b border-[#e8e8e8] max-[640px]:grid-cols-1">
+                {/* Question */}
+                <div className="px-12 py-8 border-r border-[#e8e8e8] max-[860px]:px-7 max-[640px]:border-r-0 max-[640px]:border-b max-[640px]:py-6">
+                  <span className="font-mono text-[0.52rem] text-[#c8622e] tracking-[0.1em] block mb-3">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <p className="font-grotesk text-[1.05rem] leading-[1.6] text-[#1c1916]">
+                    {faq.question}
+                  </p>
+                </div>
 
-              {/* Answer */}
-              <div className="px-12 py-8 max-[860px]:px-7 max-[640px]:py-6">
-                <p className="font-mono text-[0.72rem] font-light text-[#6e6a62] leading-[1.85]">
-                  {faq.answer}
-                </p>
+                {/* Answer */}
+                <div className="px-12 py-8 max-[860px]:px-7 max-[640px]:py-6">
+                  <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-[1.85]">
+                    {faq.answer}
+                  </p>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
