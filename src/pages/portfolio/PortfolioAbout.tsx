@@ -113,7 +113,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 const PortfolioAbout = () => {
   return (
-    <div className="w-full max-w-[1100px] mx-auto pb-28 max-[860px]:pb-16">
+    <div className="w-full max-w-[1440px] mx-auto pb-28 max-[860px]:pb-16">
 
       {/* ── HERO ── */}
       <section
@@ -220,7 +220,7 @@ const PortfolioAbout = () => {
           {processSteps.map((step, i) => (
             <div
               key={step.number}
-              className={`px-8 py-10 flex flex-col max-[860px]:px-6 max-[860px]:py-8 ${
+              className={`px-12 py-10 flex flex-col max-[860px]:px-7 max-[860px]:py-8 ${
                 i < 3 ? "border-r border-[#e8e8e8]" : ""
               }`}
             >

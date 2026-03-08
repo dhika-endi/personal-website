@@ -27,7 +27,7 @@ function CaseImage({ src, alt, caption }: { src: string; alt: string; caption?: 
 
 const DesignSystemCaseStudy = () => {
   return (
-    <div className="w-full max-w-[1100px] mx-auto pb-28 max-[860px]:pb-16">
+    <div className="w-full max-w-[1440px] mx-auto pb-28 max-[860px]:pb-16">
 
       {/* ── HEADER ── */}
       <section

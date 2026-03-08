@@ -25,7 +25,7 @@ const PortfolioContact = () => {
   };
 
   return (
-    <div className="w-full max-w-[1100px] mx-auto pb-28 max-[860px]:pb-16">
+    <div className="w-full max-w-[1440px] mx-auto pb-28 max-[860px]:pb-16">
 
       {/* ── HERO ── */}
       <section
@@ -63,7 +63,7 @@ const PortfolioContact = () => {
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               placeholder="Dhika Endi Astowo"
-              className="w-full bg-transparent border-0 border-b border-[#e8e8e8] pb-3 font-grotesk text-[1rem] text-[#1c1916] placeholder:text-[#d5cfc7] outline-none focus:border-[#1c1916] transition-colors"
+              className="w-full bg-transparent border-0 border-b border-[#e8e8e8] pb-3 font-grotesk text-[1rem] text-[#1c1916] placeholder:text-[#d5cfc7] outline-none focus:ring-0 focus:border-[#1c1916] transition-colors [&:-webkit-autofill]:shadow-[inset_0_0_0_1000px_#fafafa] [&:-webkit-autofill]:[-webkit-text-fill-color:#1c1916]"
             />
           </div>
 
@@ -82,7 +82,7 @@ const PortfolioContact = () => {
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               placeholder="hello@example.com"
-              className="w-full bg-transparent border-0 border-b border-[#e8e8e8] pb-3 font-grotesk text-[1rem] text-[#1c1916] placeholder:text-[#d5cfc7] outline-none focus:border-[#1c1916] transition-colors"
+              className="w-full bg-transparent border-0 border-b border-[#e8e8e8] pb-3 font-grotesk text-[1rem] text-[#1c1916] placeholder:text-[#d5cfc7] outline-none focus:ring-0 focus:border-[#1c1916] transition-colors [&:-webkit-autofill]:shadow-[inset_0_0_0_1000px_#fafafa] [&:-webkit-autofill]:[-webkit-text-fill-color:#1c1916]"
             />
           </div>
 
@@ -92,15 +92,16 @@ const PortfolioContact = () => {
               htmlFor="message"
               className="block font-mono text-[0.62rem] tracking-[0.1em] uppercase text-[#b0aba3] mb-3"
             >
-              Message
+              Message *
             </label>
             <textarea
+              required
               id="message"
               rows={5}
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               placeholder="Tell me about your project..."
-              className="w-full bg-transparent border-0 border-b border-[#e8e8e8] pb-3 font-grotesk text-[1rem] text-[#1c1916] placeholder:text-[#d5cfc7] outline-none focus:border-[#1c1916] transition-colors resize-none"
+              className="w-full bg-transparent border-0 border-b border-[#e8e8e8] pb-3 font-grotesk text-[1rem] text-[#1c1916] placeholder:text-[#d5cfc7] outline-none focus:ring-0 focus:border-[#1c1916] transition-colors resize-none [&:-webkit-autofill]:shadow-[inset_0_0_0_1000px_#fafafa] [&:-webkit-autofill]:[-webkit-text-fill-color:#1c1916]"
             />
           </div>
 

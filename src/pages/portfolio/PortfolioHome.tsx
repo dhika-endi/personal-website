@@ -111,7 +111,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 const PortfolioHome = () => {
   return (
-    <div className="w-full max-w-[1100px] mx-auto pb-28 max-[860px]:pb-16">
+    <div className="w-full max-w-[1440px] mx-auto pb-28 max-[860px]:pb-16">
 
       {/* ═══════════════════════════════════════
           SECTION 1 — INTRO
@@ -123,14 +123,14 @@ const PortfolioHome = () => {
       >
         {/* Side ornaments */}
         <div
-          className="absolute top-0 bottom-0 pointer-events-none overflow-hidden hidden min-[1300px]:block"
-          style={{ right: "100%", width: "calc((100vw - 1100px) / 2)" }}
+          className="absolute top-0 bottom-0 pointer-events-none overflow-hidden hidden min-[1600px]:block"
+          style={{ right: "100%", width: "calc((100vw - 1440px) / 2)" }}
         >
           <TokenGraph nodes={LEFT_NODES} edges={LEFT_EDGES} />
         </div>
         <div
-          className="absolute top-0 bottom-0 pointer-events-none overflow-hidden hidden min-[1300px]:block"
-          style={{ left: "100%", width: "calc((100vw - 1100px) / 2)" }}
+          className="absolute top-0 bottom-0 pointer-events-none overflow-hidden hidden min-[1600px]:block"
+          style={{ left: "100%", width: "calc((100vw - 1440px) / 2)" }}
         >
           <TokenGraph nodes={RIGHT_NODES} edges={RIGHT_EDGES} />
         </div>
@@ -143,10 +143,10 @@ const PortfolioHome = () => {
             <h1 className="font-grotesk font-normal text-[3rem] leading-[1.05] tracking-[-0.025em] text-[#1c1916] mb-6 max-[860px]:text-[2.2rem]">
               Hi, I'm Dhika.
             </h1>
-            <p className="font-grotesk text-[1.15rem] leading-[1.75] text-[#6e6a62] max-w-[420px]">
+            <p className="font-grotesk text-[1.15rem] leading-[1.75] text-[#6e6a62]">
               I'm a UI designer and design-system architect from Purwokerto, Indonesia.
             </p>
-            <p className="font-grotesk text-[1.15rem] leading-[1.75] text-[#6e6a62] max-w-[420px] mt-2 mb-10">
+            <p className="font-grotesk text-[1.15rem] leading-[1.75] text-[#6e6a62] mt-2 mb-10">
               I work across design systems, UI, and accessibility—using AI tools like Claude Code to accelerate foundation audits, automate token naming, and draft documentation faster than ever.
             </p>
             <a href="mailto:ui.dhika@gmail.com">
@@ -183,7 +183,7 @@ const PortfolioHome = () => {
             <ScrollReveal key={study.number} variant="fade-up" delay={index * 0.12}>
               <Link
                 to={study.href}
-                className={`group relative grid grid-cols-[64px_1fr_20px] items-start py-7 border-b border-[#e8e8e8] gap-5 no-underline transition-all duration-200 ${
+                className={`group relative grid grid-cols-[64px_1fr_20px] items-start py-7 border-b border-[#e8e8e8] gap-10 no-underline transition-all duration-200 ${
                   index === 0 ? "border-t" : ""
                 }`}
               >
@@ -231,7 +231,7 @@ const PortfolioHome = () => {
               key={step.number}
               variant="fade-up"
               delay={i * 0.1}
-              className={`px-8 py-10 flex flex-col max-[860px]:px-6 max-[860px]:py-8 ${
+              className={`px-12 py-10 flex flex-col max-[860px]:px-7 max-[860px]:py-8 ${
                 i < 3 ? "border-r border-[#e8e8e8]" : ""
               } max-[640px]:${i % 2 === 0 ? "border-r border-[#e8e8e8]" : ""} max-[640px]:${i < 2 ? "border-b border-[#e8e8e8]" : ""}`}
             >

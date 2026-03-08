@@ -22,7 +22,7 @@ function CaseImage({ src, alt }: { src: string; alt: string }) {
 
 const TokenAirtableCaseStudy = () => {
   return (
-    <div className="w-full max-w-[1100px] mx-auto pb-28 max-[860px]:pb-16">
+    <div className="w-full max-w-[1440px] mx-auto pb-28 max-[860px]:pb-16">
 
       {/* ── BACK NAV + TITLE ── */}
       <section

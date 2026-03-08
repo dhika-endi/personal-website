@@ -220,7 +220,7 @@ const PortfolioPlayground = () => {
 
   return (
     <>
-      <div className="w-full max-w-[1100px] mx-auto pb-28 max-[860px]:pb-16">
+      <div className="w-full max-w-[1440px] mx-auto pb-28 max-[860px]:pb-16">
         <div
           className="px-6 pt-6 pb-6 max-[860px]:px-4"
           style={{ animation: "fadeUp .4s ease both" }}
