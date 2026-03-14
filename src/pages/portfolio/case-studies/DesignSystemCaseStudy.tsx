@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import imgDsScore from "@/assets/design-system/image-ds-score.png";
+import imgColorPrimitive from "@/assets/design-system/image-color-primitive.png";
+import imgColorSemantic from "@/assets/design-system/image-color-semantic.png";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -211,8 +213,10 @@ const DesignSystemCaseStudy = () => {
           {
             title: "Color Scale",
             text: "Primitives define raw hues and shades (e.g., blue-500). Semantic tokens assign meaning (e.g., color-action-primary). This two-layer approach makes global theme changes trivial and ensures accessible contrast ratios.",
-            image: "https://framerusercontent.com/images/hSSXNzQOOPQzKsY8ppEyvxXKLew.png",
-            alt: "Color Scale",
+            image: imgColorPrimitive,
+            alt: "Color Scale — Primitive Colors",
+            extraImage: imgColorSemantic,
+            extraAlt: "Color Scale — Semantic Colors",
           },
           {
             title: "Spacing & Sizing",
@@ -240,6 +244,9 @@ const DesignSystemCaseStudy = () => {
             <h3 className="font-grotesk font-normal text-[1.1rem] text-[#1c1916] mb-3">{item.title}</h3>
             <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed max-w-[640px]">{item.text}</p>
             <CaseImage src={item.image} alt={item.alt} />
+            {"extraImage" in item && item.extraImage && (
+              <CaseImage src={item.extraImage as string} alt={item.extraAlt as string} />
+            )}
           </div>
         ))}
       </section>
