@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
+import imgDsScore from "@/assets/design-system/image-ds-score.png";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -385,7 +386,7 @@ const DesignSystemCaseStudy = () => {
           </div>
           <div className="mt-10 border border-[#e8e8e8]">
             <img
-              src="/src/assets/design-system/image-ds-score.png"
+              src={imgDsScore}
               alt="Design System Health score from Figma Console MCP"
               className="w-full block"
             />
