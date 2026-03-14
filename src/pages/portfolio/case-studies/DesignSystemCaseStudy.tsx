@@ -212,7 +212,7 @@ const DesignSystemCaseStudy = () => {
           },
           {
             title: "Color Scale",
-            text: "Primitives define raw hues and shades (e.g., blue-500). Semantic tokens assign meaning (e.g., color-action-primary). This two-layer approach makes global theme changes trivial and ensures accessible contrast ratios.",
+            text: "A two-layer color system built for scale. Primitive tokens define raw values — neutrals, primary hues, and supporting palettes — each mapped to a specific hex code. Semantic tokens reference primitives and assign contextual meaning, such as text colors and background colors, so a single update propagates across every usage.",
             image: imgColorPrimitive,
             alt: "Color Scale — Primitive Colors",
             extraImage: imgColorSemantic,
