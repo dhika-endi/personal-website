@@ -55,15 +55,14 @@ const DesignSystemCaseStudy = () => {
         </div>
 
         {/* Meta bar */}
-        <div className="grid grid-cols-3 border-t border-[#e8e8e8] max-[640px]:grid-cols-2">
+        <div className="grid grid-cols-2 border-t border-[#e8e8e8]">
           {[
-            { label: "Year",     value: "2024" },
-            { label: "Company",  value: "IxDF" },
-            { label: "Stack",    value: "Figma · Airtable · Storybook" },
+            { label: "Year",  value: "2024" },
+            { label: "Stack", value: "Figma · Airtable · Storybook" },
           ].map((item, i) => (
             <div
               key={item.label}
-              className={`px-12 py-6 max-[860px]:px-7 ${i < 2 ? "border-r border-[#e8e8e8]" : ""} ${i === 0 ? "max-[640px]:border-b border-[#e8e8e8]" : ""}`}
+              className={`px-12 py-6 max-[860px]:px-7 ${i < 1 ? "border-r border-[#e8e8e8]" : ""}`}
             >
               <p className="font-mono text-[0.52rem] tracking-[0.1em] text-[#b0aba3] uppercase mb-1.5">{item.label}</p>
               <p className="font-mono text-[0.72rem] text-[#1c1916]">{item.value}</p>
@@ -96,7 +95,7 @@ const DesignSystemCaseStudy = () => {
           <div className="px-12 py-16 max-[860px]:px-7 max-[860px]:py-10">
             <SectionLabel>Tags</SectionLabel>
             <div className="flex flex-wrap gap-2">
-              {["Design Tokens", "Component Library", "Figma Variables", "Airtable", "Documentation", "Governance", "Accessibility"].map((tag) => (
+              {["Design Tokens", "Component Library", "Figma Variables", "Airtable", "Documentation", "Governance", "Accessibility", "Claude Code", "MCP"].map((tag) => (
                 <span key={tag} className="font-mono text-[0.58rem] tracking-[0.06em] text-[#b0aba3] border border-[#e8e8e8] px-2.5 py-1">
                   {tag}
                 </span>
@@ -139,6 +138,7 @@ const DesignSystemCaseStudy = () => {
                 { label: "Variable-driven responsiveness", text: "Bind spacing, sizing, and typography to breakpoints so components adapt automatically." },
                 { label: "Library split",                 text: "Separate universal components from product-specific patterns for tailored workflows." },
                 { label: "Governance & docs",             text: "Centralize naming rules in Airtable and publish interactive documentation for every component." },
+                { label: "AI acceleration",              text: "Claude Code + Figma Console MCP handled bulk token operations, variable sync, and doc drafting — tasks that previously took days." },
               ].map((item) => (
                 <li key={item.label} className="flex gap-3">
                   <span className="font-mono text-[0.6rem] text-[#c8622e] mt-1 flex-shrink-0">—</span>
@@ -164,22 +164,28 @@ const DesignSystemCaseStudy = () => {
               number: "01",
               title: "Fragmented Token Usage",
               text: "Multiple teams had created ad-hoc color and spacing values. Consolidating them into a single primitive set required auditing every existing component and negotiating trade-offs.",
+              ai: "Claude Code scripted the audit and bulk-renamed tokens via the Figma Console MCP — cutting days of manual cleanup to hours.",
             },
             {
               number: "02",
               title: "Responsive Overhead",
               text: "Binding tokens to breakpoints added complexity. We invested in clear documentation and helper utilities so designers and engineers could apply responsive tokens without guesswork.",
+              ai: "Variable collections across all breakpoints were updated programmatically, keeping every mode in sync without touching them one by one.",
             },
             {
               number: "03",
               title: "Limited Discoverability",
               text: "Early versions lacked search and examples. We iterated on the docs site, adding live previews, anatomy diagrams, and do/don't guidance to make the system approachable.",
+              ai: "Documentation drafts were generated from component specs using Claude Code, keeping guidelines current with the live token structure.",
             },
           ].map((c) => (
             <div key={c.number}>
               <span className="font-mono text-[0.52rem] text-[#c8622e] tracking-[0.1em] block mb-3">{c.number}</span>
               <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-2 leading-snug">{c.title}</h3>
               <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed">{c.text}</p>
+              <p className="font-mono text-[0.75rem] font-light text-[#b0aba3] leading-relaxed mt-3 pt-3 border-t border-[#e8e8e8]">
+                <span className="text-[#c8622e]">AI — </span>{c.ai}
+              </p>
             </div>
           ))}
         </div>
@@ -339,6 +345,60 @@ const DesignSystemCaseStudy = () => {
             See the Component Documentation case study
             <ArrowUpRight className="w-3 h-3" />
           </Link>
+        </div>
+      </section>
+
+      {/* ── AI INVOLVEMENT ── */}
+      <section
+        className="border-b border-[#d4d4d4]"
+        style={{ animation: "fadeUp .5s .29s ease both" }}
+      >
+        <div className="px-12 pt-16 pb-10 max-[860px]:px-7 max-[860px]:pt-12">
+          <SectionLabel>AI Involvement</SectionLabel>
+          <p className="font-grotesk text-[1.15rem] leading-[1.8] text-[#6e6a62] max-w-[640px] mb-10">
+            Claude Code — paired with the Figma Console MCP — was integrated directly into the design workflow to accelerate the most repetitive, high-volume tasks in the system.
+          </p>
+          <div className="grid min-[640px]:grid-cols-3 gap-10">
+            {[
+              {
+                number: "01",
+                title: "Token Management",
+                text: "Bulk-created, renamed, and restructured Figma variables via the console — eliminating hours of manual work when the token architecture evolved.",
+              },
+              {
+                number: "02",
+                title: "Variable Sync",
+                text: "Queried and updated variable collections across modes and breakpoints programmatically, keeping primitive and semantic layers in sync without error-prone manual edits.",
+              },
+              {
+                number: "03",
+                title: "Documentation Generation",
+                text: "Drafted component specs, usage guidelines, and naming rules directly from token data — cutting time-to-publish and keeping docs consistent with the live system.",
+              },
+            ].map((item) => (
+              <div key={item.number}>
+                <span className="font-mono text-[0.52rem] text-[#c8622e] tracking-[0.1em] block mb-3">{item.number}</span>
+                <h3 className="font-grotesk font-normal text-[1.05rem] text-[#1c1916] mb-2 leading-snug">{item.title}</h3>
+                <p className="font-mono text-[0.85rem] font-light text-[#6e6a62] leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 border border-[#e8e8e8]">
+            <img
+              src="/src/assets/design-system/image-ds-score.png"
+              alt="Design System Health score from Figma Console MCP"
+              className="w-full block"
+            />
+          </div>
+          <a
+            href="https://github.com/southleft/figma-console-mcp"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 font-mono text-[0.68rem] text-[#c8622e] hover:underline no-underline mt-4"
+          >
+            Figma Console MCP — southleft/figma-console-mcp
+            <ArrowUpRight className="w-3 h-3" />
+          </a>
         </div>
       </section>
 
